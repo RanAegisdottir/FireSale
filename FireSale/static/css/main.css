@@ -1,3 +1,20 @@
 .shop {
     border-bottom: solid 2px rgba(155, 155, 155, .5);
 }
+
+.footer {
+    background-color: #f97224;
+    height: 80px;
+    color: white;
+}
+
+.nav-image img {
+    display: block;
+    position: absolute;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.navbar {
+    color: #f97224;
+}
