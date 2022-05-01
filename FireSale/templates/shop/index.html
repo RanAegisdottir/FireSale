@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="shop">
+        <h2>Welcome to the shop!</h2>
+    </div>
+    {% for product in products %}
+        {% if product.price > 100 %}
+            <p>expensive!</p>
+        {% else %}
+            <p>not expensive!</p>
+        {% endif %}
+        <h4>{{product.name}}</h4>
+        <p>{{ product.price }}$</p>
+    {% endfor %}
+{% endblock %}
