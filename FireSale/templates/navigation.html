@@ -1,11 +1,12 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-light">
           <div class="container-fluid">
               <a class="navbar-brand" href="#">
                   <img src="{% static 'images/logo ser.png' %}" alt="logo" width="50" height="80" class="d-inline-block align-text">
-                  <img src="{% static 'images/logo text.png' %}" alt="logotext" width="150" height="60" class="d-inline-block align-text-top">
+                  <img src="{% static 'images/logo text.png' %}" alt="logotext" width="170" height="60" class="d-inline-block align-text-top">
               </a>
           </div>
       </nav>
@@ -13,7 +14,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto">
           <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'shop-index' %}">Shop</a>
           </li>
@@ -25,8 +26,7 @@
                   My profile
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="{% url 'myprofile-index' %}">Profile</a></li>
-                  <li><a class="dropdown-item" href="#">Account</a></li>
+                  <li><a class="dropdown-item" href="{% url 'myprofile-index' %}">Account</a></li>
                   <li><a class="dropdown-item" href="#">Buying</a></li>
                   <li><a class="dropdown-item" href="#">Selling</a></li>
               </ul>
