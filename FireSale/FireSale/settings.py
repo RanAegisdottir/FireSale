@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'fire-sale-db',
         'USER': 'fire-sale-db-user',
         'PASSWORD': 'fire123',
-        'HOST': '34.105.146.200',
+        'HOST': '34.142.47.146',
         'POST': '5432'
     }
 }
