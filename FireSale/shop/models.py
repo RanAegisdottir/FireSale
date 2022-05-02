@@ -7,7 +7,6 @@ class Conditions(models.Model):
 
 
 class Item(models.Model):
-    itemID: models.IntegerField()
     name: models.CharField(max_length=255)
     description: models.CharField(max_length=255)
     # foreignkey á  user
