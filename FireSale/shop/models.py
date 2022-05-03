@@ -12,6 +12,7 @@ class Item(models.Model):
     seller = models.ForeignKey(Users, on_delete=models.CASCADE, default=None)
     condition = models.ForeignKey(Conditions, on_delete=models.CASCADE, default=None)
     available = models.BooleanField(default=None)
+    priceidea = models.FloatField(default=None)
 
 
 class ItemImage(models.Model):
@@ -22,5 +23,6 @@ class ItemImage(models.Model):
 class Offers(models.Model):
     buyer = models.ForeignKey(Users, on_delete=models.CASCADE, default=None)
     item = models.ForeignKey(Item, on_delete=models.CASCADE, default=None)
-    amount = models.IntegerField(default=None)
+    amount = models.FloatField(default=None)
     accepted = models.BooleanField(default=None)
+    
