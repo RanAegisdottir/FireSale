@@ -3,24 +3,24 @@ from myprofile.models import Users
 
 
 class Conditions(models.Model):
-    status = models.CharField(max_length=255)
+    status = models.CharField(max_length=255, default=None)
 
 
 class Item(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
-    seller = models.ForeignKey(Users, on_delete=models.CASCADE)
-    condition = models.ForeignKey(Conditions, on_delete=models.CASCADE)
-    available = models.BooleanField()
+    name = models.CharField(max_length=255, default=None)
+    description = models.CharField(max_length=255, default=None)
+    seller = models.ForeignKey(Users, on_delete=models.CASCADE, default=None)
+    condition = models.ForeignKey(Conditions, on_delete=models.CASCADE, default=None)
+    available = models.BooleanField(default=None)
 
 
 class ItemImage(models.Model):
-    imgURL = models.CharField(max_length=9999)
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    imgURL = models.CharField(max_length=9999, default=None)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, default=None)
 
 
 class Offers(models.Model):
-    buyer = models.ForeignKey(Users, on_delete=models.CASCADE)
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    amount = models.IntegerField()
-    accepted = models.BooleanField()
+    buyer = models.ForeignKey(Users, on_delete=models.CASCADE, default=None)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, default=None)
+    amount = models.IntegerField(default=None)
+    accepted = models.BooleanField(default=None)
