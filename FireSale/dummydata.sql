@@ -1,7 +1,7 @@
 INSERT INTO myprofile_users (name, email, username, password, bio, rating) VALUES('Kristin', 'kristin@gmail.com', 'krissa', 'fire123', '', 0);
 INSERT INTO myprofile_userimage (user_img, user) VALUES('image', 1)
 
-INSERT INTO shop_item (name, description, sellerID, condition, available) VALUES('PS5', 'flott PS5', 0, 1, true);
+INSERT INTO shop_item (name, description, sellerID, condition, available, price_idea) VALUES('PS5', 'flott PS5', 0, 1, true, 5000);
 INSERT INTO shop_conditions (status) VALUES('new');
 INSERT INTO shop_itemimage (img_url, item) VALUES('PS5', 1);
 INSERT INTO shop_offers (buyer, item, amount, accepted) VALUES(1, 1, 5000, false);
