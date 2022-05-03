@@ -4,7 +4,7 @@ from django import forms
 
 
 class ItemCreateForm(ModelForm):
-    image = forms.Charfield(requered=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    image = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
     class Meta:
         model = Item
         exclude = ['id', 'seller', 'available']
