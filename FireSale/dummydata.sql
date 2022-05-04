@@ -17,32 +17,36 @@ INSERT INTO checkout_stars (star_img, star_num, user_id) VALUES('Star', 5, 1);
 
 
 INSERT INTO myprofile_users (name, email, username, password, bio, rating) VALUES('Ran', 'ran@gmail.com', 'Robbery', 'fire123', '', 0);
-INSERT INTO myprofile_userimage (user_img, user) VALUES('image', 2)
+INSERT INTO myprofile_userimage (user_iamge, user_id) VALUES('https://fjolnir.is/wp-content/uploads/2020/12/fullsizeoutput_367c-scaled.jpeg', 2);
 
-INSERT INTO shop_item (name, description, sellerID, condition, available, price_idea) VALUES('Pink Table', 'Old table', 2, 2, true, 3000);
-INSERT INTO shop_conditions (status) VALUES('old');
-INSERT INTO shop_itemimage (img_url, item) VALUES('Table', 2);
-INSERT INTO shop_offers (buyer, item, amount, accepted) VALUES(2, 2, 3500, false);
+INSERT INTO shop_item (name, description, seller_id, condition_id, available, priceidea) VALUES('Pink Table', 'Old table', 2, 2, true, 3000);
+
+INSERT INTO shop_conditions (status) VALUES('Used - Like New');
+INSERT INTO shop_conditions (status) VALUES('Used - Very Good');
+INSERT INTO shop_conditions (status) VALUES('Used - Good');
+INSERT INTO shop_conditions (status) VALUES('Used - Acceptable');
+INSERT INTO shop_conditions (status) VALUES('Damaged');
+
+INSERT INTO shop_itemimage ("imgURL", item_id) VALUES('https://assets.babybunting.com.au/prd/109864_1.jpg', 15);
+INSERT INTO shop_offers (buyer_id, item_id, amount, accepted) VALUES(2, 15, 3500, false);
 
 INSERT INTO checkout_country (country) VALUES('NZ');
-INSERT INTO checkout_payments (userID, card_name, card_num, exdate, cvc, companyname, country, street, zip, city, phone) VALUES(2, 'Ran', 1111, 01-02-2024, 987, '', 2, 'Laugavegur 1', '400', 'Reykjavík', '9876543');
-INSERT INTO checkout_order (offer_id, pay_id) VALUES(2, 2);
-INSERT INTO checkout_review (text, rating, order) VALUES('bad', 1, 2);
-INSERT INTO checkout_stars (star_img, star_num, user) VALUES('Star', 1, 2);
+INSERT INTO checkout_payments ("userID_id", card_name, card_num, exdate, "CVC", companyname, country_id, street, zip, city, phone) VALUES(2, 'Ran', 1111, '01-02-2024', 987, '', 2, 'Laugavegur 1', '400', 'Reykjavík', '9876543');
+INSERT INTO checkout_order ("offerID_id", "payID_id") VALUES(2, 2);
+INSERT INTO checkout_reviews (text, rating, order_id) VALUES('bad', 1, 3);
+INSERT INTO checkout_stars (star_img, star_num, user_id) VALUES('Star', 1, 2);
 
 
 
 
 INSERT INTO myprofile_users (name, email, username, password, bio, rating) VALUES('Jon', 'jon@gmail.com', 'jhonny', 'fire123', '', 0);
-INSERT INTO myprofile_userimage (user_img, user) VALUES('image', 3)
+INSERT INTO myprofile_userimage (user_image, user_id) VALUES('https://i.scdn.co/image/ab6761610000e5eb71efedebc0fad1946ea843cd', 3);
 
-INSERT INTO shop_item (name, description, sellerID, condition, available, price_idea) VALUES('Sofa', 'New sofa', 3, 1, true, 7000);
-INSERT INTO shop_conditions (status) VALUES('used');
-INSERT INTO shop_itemimage (img_url, item) VALUES('sofa', 3);
-INSERT INTO shop_offers (buyer, item, amount, accepted) VALUES(3, 3, 6000, false);
+INSERT INTO shop_item (name, description, seller_id, condition_id, available, priceidea) VALUES('Sofa', 'New sofa', 3, 1, true, 7000);
+INSERT INTO shop_itemimage ("imgURL", item_id) VALUES('http://cdn.shopify.com/s/files/1/2660/5106/products/d1rjiawy0pznxn6875ba_b6e0f2d6-0076-4a01-af48-0faf30d8c021_800x.jpg?v=1610981031', 16);
+INSERT INTO shop_offers (buyer_id, item_id, amount, accepted) VALUES(3, 16, 6000, false);
 
-INSERT INTO checkout_country (country) VALUES('NZ');
-INSERT INTO checkout_payments (userID, card_name, card_num, exdate, cvc, companyname, country, street, zip, city, phone) VALUES(3, 'Jon', 2222, 10-10-2024, 777, '', 1, 'draugavegur 1', '800', 'Reykjavík', '77777777');
-INSERT INTO checkout_order (offer_id, pay_id) VALUES(3, 3);
-INSERT INTO checkout_review (text, rating, order) VALUES('good', 3, 3);
-INSERT INTO checkout_stars (star_img, star_num, user) VALUES('Star', 3, 3);
+INSERT INTO checkout_payments ("userID_id", card_name, card_num, exdate, "CVC", companyname, country_id, street, zip, city, phone) VALUES(3, 'Jon', 2222, '10-10-2024', 777, '', 1, 'draugavegur 1', '800', 'Reykjavík', '77777777');
+INSERT INTO checkout_order ("offerID_id", "payID_id") VALUES(3, 4);
+INSERT INTO checkout_reviews (text, rating, order_id) VALUES('good', 3, 3);
+INSERT INTO checkout_stars (star_img, star_num, user_id) VALUES('Star', 3, 3);

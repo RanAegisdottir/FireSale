@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'create.apps.CreateConfig',
     'myprofile.apps.MyprofileConfig',
-    'checkout.apps.CheckoutConfig'
+    'checkout.apps.CheckoutConfig',
+    'user.apps.UserConfig'
 ]
 
 MIDDLEWARE = [
