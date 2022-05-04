@@ -1,8 +1,3 @@
-/*displaya alla div sem block*/
-div {
-    display: block;
-}
-
 /*fyrir alla hlekki á síðunni, fjarlægja undirlínu og hafa sama lit*/
 a, a:hover {
     color: #f97224;
@@ -53,16 +48,43 @@ a, a:hover {
     color: #f97224;
 }
 
-/*öll items í shop síðunni*/
 .products {
-    padding-left: 20px;
-    color: #f97224;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
+    margin-top: 30px;
+    width: 75%;
+    float: right;
 }
 
-/*fóturinn neðst á síðunni*/
+/*öll items í shop síðunni*/
+.product {
+    color: #f97224;
+    width: 33%;
+    height: 33%;
+    display: inline;
+    float: left;
+}
+
+.product img {
+    width: 50%;
+}
+
+.search-filter {
+    margin-top: 60px;
+    width: 25%;
+    float: right;
+}
+
+.search-bar {
+    width: 70%;
+    margin-left: 30px;
+}
+.search-input {
+    color: #f97224;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-bottom-color: lightgrey;
+}
+
+/*fóturinn neðst á síðunni
 .footer {
     background-color: #f97224;
     height: 80px;
@@ -70,3 +92,4 @@ a, a:hover {
     position: relative;
     margin-top: 1200px;
 }
+*/
