@@ -1,13 +1,15 @@
-.shop {
-    border-bottom: solid 2px rgba(155, 155, 155, .5);
+/*displaya alla div sem block*/
+div {
+    display: block;
 }
 
-.footer {
-    background-color: #f97224;
-    height: 80px;
-    color: white;
+/*fyrir alla hlekki á síðunni, fjarlægja undirlínu og hafa sama lit*/
+a, a:hover {
+    color: #f97224;
+    text-decoration: none;
 }
 
+/*logo á nav barnum*/
 .nav-image img {
     display: block;
     position: absolute;
@@ -15,15 +17,47 @@
     width: 100%;
 }
 
+/*hafa lit á textanum í navbar, ATH virkar ekki*/
 .navbar {
     color: #f97224;
 }
 
+/*mynd í item detail*/
 .float-container {
-    display: flex;
+    margin-top: 40px;
+    color: #f97224;
+    float: left;
+    width: 50px;
+    height: 50px;
 }
 
+/*texti með upplýsingum í item detail*/
 .child-container {
+    margin-top: 40px;
     color: #f97224;
-    display: flex;
+    width: 50%;
+    float: right;
+}
+
+/*fjarlægja seinna*/
+.red {
+    color: #f97224;
+}
+
+/*öll items í shop síðunni*/
+.products {
+    padding-left: 20px;
+    color: #f97224;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*fóturinn neðst á síðunni*/
+.footer {
+    background-color: #f97224;
+    height: 80px;
+    color: white;
+    position: relative;
+    margin-top: 1200px;
 }
