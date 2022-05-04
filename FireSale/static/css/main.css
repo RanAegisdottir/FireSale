@@ -11,15 +11,22 @@ a, a:hover {
 
 /*logo á nav barnum*/
 .nav-image img {
-    display: block;
     position: absolute;
     margin-top: 80px;
     width: 100%;
 }
 
+/*profile myndin í horninu og eldurinn/stjörnunar sem fylgja*/
+.profile-bubble {
+    float: right;
+    position: absolute;
+    margin-left: 1450px;
+}
+
 /*hafa lit á textanum í navbar, ATH virkar ekki*/
-.navbar {
+.nav-links {
     color: #f97224;
+    padding: 10px;
 }
 
 /*mynd í item detail*/

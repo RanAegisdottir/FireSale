@@ -9,6 +9,12 @@
                   <img src="{% static 'images/logo text.png' %}" alt="logotext" width="170" height="60" class="d-inline-block align-text-top">
               </a>
           </div>
+          <div class="profile-bubble">
+              <a class="navbar-brand" href="{% url 'myprofile-index' %}">
+                  <img src="{% static 'images/fire stars.png' %}" alt="profile" width="120" height="30">
+                  <img src="{% static 'images/bubble profile.png' %}" alt="profile" width="60" height="60">
+              </a>
+          </div>
       </nav>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -16,13 +22,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'shop-index' %}">Shop</a>
+              <a class="nav-links" aria-current="page" href="{% url 'shop-index' %}">Shop</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="{% url 'create-index' %}">Create Item</a>
+              <a class="nav-links" href="{% url 'create-index' %}">Create Item</a>
           </li>
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-links dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   My profile
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -32,7 +38,7 @@
               </ul>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">Log out</a>
+              <a class="nav-links" href="#">Log out</a>
           </li>
       </ul>
     </div>
