@@ -1,8 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from create.forms.item_form import ItemCreateForm
-
-
-# Create your views here.
+from shop.models import ItemImage, Item
 
 
 def index(request):
@@ -11,7 +9,12 @@ def index(request):
 
 def create_item(request):
     if request.method == 'POST':
-        print(1)
+        form = ItemCreateForm(data=request.POST)
+        if form.is_valid():
+            item = form.save()
+            item_image = ItemImage(imgURL=request.POST['image'], item=item)
+            item_image.save()
+            return redirect('shop-index')
     else:
         form = ItemCreateForm()
     return render(request, 'create/create_item.html', {

@@ -14,7 +14,7 @@ class Item(models.Model):
     description = models.CharField(max_length=255, default=None)
     seller = models.ForeignKey(Users, on_delete=models.CASCADE, default=None)
     condition = models.ForeignKey(Conditions, on_delete=models.CASCADE, default=None)
-    available = models.BooleanField(default=None)
+    available = models.BooleanField(default=True)
     priceidea = models.FloatField(default=None)
 
     def __str__(self):
