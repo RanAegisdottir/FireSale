@@ -1,9 +1,32 @@
 {% extends 'base.html' %}
-{% block content %}
-    <h1 class="red">Item collection</h1>
+{% block content  %}
+<body>
+    <!--all products-->
     <div class="products">
         {% for Item in products %}
             {% include 'shop/single_item.html' with Item=Item %}
         {% endfor %}
     </div>
+    <!--search bar and filter by-->
+    <div class="search-filter">
+        <div class="search-bar">
+            <form>
+                <input type="text" placeholder="Search..." class="search-input">
+            </form>
+        </div>
+        <div class="filter">
+            <div data-role="main" class="ui-content">
+            <form method="post" action="/action_page_post.php">
+              <div data-role="rangeslider">
+                <label for="price-min">Price:</label>
+                <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+                <label for="price-max">Price:</label>
+                <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+              </div>
+                <!--<input type="submit" data-inline="true" value="Submit">-->
+              </form>
+          </div>
+        </div>
+    </div>
+</body>
 {% endblock %}
