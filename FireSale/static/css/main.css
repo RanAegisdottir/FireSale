@@ -9,7 +9,7 @@ a, a:hover {
     text-decoration: none;
 }
 
-/*logo á nav barnum*/
+/*fire line-ið*/
 .nav-image img {
     position: absolute;
     margin-top: 80px;
@@ -17,10 +17,8 @@ a, a:hover {
 }
 
 /*profile myndin í horninu og eldurinn/stjörnunar sem fylgja*/
-.profile-bubble {
+.profile-img {
     float: right;
-    position: absolute;
-    margin-left: 1450px;
 }
 
 /*hafa lit á textanum í navbar, ATH virkar ekki*/

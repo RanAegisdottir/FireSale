@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{% static 'css/main.css' %}" />
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
+      <!--logo-->
       <nav class="navbar navbar-light">
           <div class="container-fluid">
               <a class="navbar-brand" href="{% url 'shop-index' %}">
@@ -9,16 +10,8 @@
                   <img src="{% static 'images/logo text.png' %}" alt="logotext" width="170" height="60" class="d-inline-block align-text-top">
               </a>
           </div>
-          <div class="profile-bubble">
-              <a class="navbar-brand" href="{% url 'myprofile-index' %}">
-                  <img src="{% static 'images/fire stars.png' %}" alt="profile" width="120" height="30">
-                  <img src="{% static 'images/bubble profile.png' %}" alt="profile" width="60" height="60">
-              </a>
-          </div>
       </nav>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!--shop, create item og log out hlekkir-->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item">
@@ -27,6 +20,7 @@
           <li class="nav-item">
               <a class="nav-links" href="{% url 'create-index' %}">Create Item</a>
           </li>
+          <!--fjarlægja þetta seinna-->
           <li class="nav-item dropdown">
               <a class="nav-links dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   My profile
@@ -37,10 +31,16 @@
                   <li><a class="dropdown-item" href="#">Selling</a></li>
               </ul>
           </li>
+          <!-- fjarlægja ^ -->
           <li class="nav-item">
               <a class="nav-links" href="#">Log out</a>
           </li>
       </ul>
     </div>
+      <!-- profile mynd og stars/fire -->
+      <a href="{% url 'myprofile-index' %}" class="profile-img">
+          <img src="{% static 'images/fire stars.png' %}" alt="rating" width="120" height="30">
+          <img src="{% static 'images/bubble profile.png' %}" alt="profile" width="60" height="60">
+      </a>
   </div>
 </nav>
