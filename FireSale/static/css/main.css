@@ -18,3 +18,12 @@
 .navbar {
     color: #f97224;
 }
+
+.float-container {
+    display: flex;
+}
+
+.child-container {
+    color: #f97224;
+    display: flex;
+}

@@ -5,6 +5,9 @@ from myprofile.models import Users
 class Conditions(models.Model):
     status = models.CharField(max_length=255, default=None)
 
+    def __str__(self):
+        return self.status
+
 
 class Item(models.Model):
     name = models.CharField(max_length=255, default=None)
@@ -13,6 +16,9 @@ class Item(models.Model):
     condition = models.ForeignKey(Conditions, on_delete=models.CASCADE, default=None)
     available = models.BooleanField(default=None)
     priceidea = models.FloatField(default=None)
+
+    def __str__(self):
+        return self.name
 
 
 class ItemImage(models.Model):
@@ -25,4 +31,5 @@ class Offers(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE, default=None)
     amount = models.FloatField(default=None)
     accepted = models.BooleanField(default=None)
+
     
