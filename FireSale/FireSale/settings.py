@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'create.apps.CreateConfig',
     'myprofile.apps.MyprofileConfig',
     'checkout.apps.CheckoutConfig',
+    'notification.apps.NotificationConfig',
     'user.apps.UserConfig'
 ]
 
