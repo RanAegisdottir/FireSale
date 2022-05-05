@@ -11,10 +11,16 @@ def create_item(request):
     if request.method == 'POST':
         form = ItemCreateForm(data=request.POST)
         if form.is_valid():
-            item = form.save()
+            name = form.cleaned_data.get("name")
+            description = form.cleaned_data.get("description")
+            condition = form.cleaned_data.get("condition")
+            priceidea = form.cleaned_data.get("priceidea")
+            item = Item(name=name, description=description,
+                        condition=condition, priceidea=priceidea, seller=request.user)
+            item.save()
             item_image = ItemImage(imgURL=request.POST['image'], item=item)
             item_image.save()
-            request.user.save()
+
             return redirect('shop-index')
     else:
         form = ItemCreateForm()
