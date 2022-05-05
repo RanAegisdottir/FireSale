@@ -99,8 +99,6 @@
 .rating_img_container{
     width: 30%;
     text-align: end;
-
-
 }
 
 .rating_img{
@@ -112,4 +110,9 @@
 
 .user_email{
     width: 80%;
+}
+
+.divider{
+    border: 0.5px solid black;
+    width: 100%;
 }
