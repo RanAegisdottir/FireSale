@@ -1,37 +1,54 @@
 
-/* Sidebar */
+
+/* Sidebar container */
 .sidebar {
   	background-color:#F97D24;
-    display: block;
-    left: 0;
     height: 100%;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
     width: 240px;
     z-index: 600;
+    padding-top: 60px;
+    padding-bottom: 80px;
 }
 
-
-.sidebar_container {
-  margin-left: 30px;
-  margin-right: 40px;
-  margin-top: 100px;
-}
-
-.sidebar-options-containter {
-  display: flex;
-  flex-direction: column;
-}
-
-
-
+/* Title of the link selections */
 .side-nav-title{
   	color: white;
-    padding-top: 40px;
-    border-bottom: 2px;
-    border-bottom-color: white;
-    padding-bottom: 0px;
+    border-bottom: 2px solid white;
+    margin: 0px 40px 8px 40px;
+    width: auto;
 }
 
+/* link container */
+.sidebar-options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+
+/* link option */
 .side_nav_option{
     color: #fbfbfb;
+    padding: 15px 0px 15px 40px;
+    width: 100%;
+}
+
+/* link on hover, so user can see the link they are on */
+.side_nav_option:hover{
+    background-color: #FF903F;
+    color: #fbfbfb;
+    font-size: larger;
+}
+
+
+/* Flex container for my account page */
+.profile-flex-container{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Second child og flex container fill the rest of site (next to the side nav bar) */
+.profile_content_container:not(:first-child) {
+  width: 100%;
 }
