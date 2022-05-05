@@ -10,7 +10,7 @@
         <p>{{ Item.description }}</p>
         <p>{{ Item.priceidea }} $</p>
         <p>Condition: {{ Item.condition }}</p>
-        <p>Seller: {{ Item.seller.name }}</p>
+        <p>Seller: {{ Item.seller.username}}</p>
         {# ef við viljum hafa það þannig að við förum inn á seller profile í item (b-krafa) #}
 {#        <a href="{% url "myprofile-index" id=Item.user.id %}"><p>Seller: {{ Item.seller.name }}</p></a>#}
     </div>
