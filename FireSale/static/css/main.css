@@ -52,19 +52,38 @@ a, a:hover {
     margin-top: 30px;
     width: 75%;
     float: right;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 /*öll items í shop síðunni*/
 .product {
-    color: #f97224;
     width: 33%;
-    height: 33%;
-    display: inline;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     float: left;
 }
 
+.product h4 {
+    color: #f97224;
+    float: left;
+    width: 100%;
+}
+
+.product p {
+    float: left;
+    color: #F9C724;
+    width: 100%;
+}
+
 .product img {
-    width: 50%;
+    padding-top: 20px;
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
 }
 
 .search-filter {

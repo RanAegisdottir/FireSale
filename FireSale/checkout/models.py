@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from myprofile.models import Users
 from shop.models import Offers
@@ -9,7 +10,7 @@ class Country(models.Model):
 
 
 class Payments(models.Model):
-    userID = models.ForeignKey(Users, on_delete=models.CASCADE, default=None)
+    userID = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
     card_name = models.CharField(max_length=255, default=None)
     card_num = models.IntegerField(default=None)
     exdate = models.DateField(default=None)
@@ -37,4 +38,4 @@ class Stars(models.Model):
     star_img = models.CharField(max_length=9999, default="")
     # á þetta að vera int
     star_num = models.IntegerField(default=0)
-    user = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default="")
