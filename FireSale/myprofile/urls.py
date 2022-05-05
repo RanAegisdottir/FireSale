@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     # http://localhost:8000/myprofile
-    path('', views.index, name="myprofile-index"),
+    path('', views.index, name="myprofile-index")
 ]
