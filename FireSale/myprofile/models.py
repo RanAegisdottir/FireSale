@@ -3,10 +3,7 @@ from django.db import models
 
 #Þurfum ekki þessa töflu
 class Users(models.Model):
-    name = models.CharField(max_length=255, default=None)
-    email = models.CharField(max_length=255, default=None)
-    username = models.CharField(max_length=255, default=None)
-    password = models.CharField(max_length=255, default=None)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
     bio = models.CharField(max_length=300, default=None)
     rating = models.IntegerField(default=None)
 
