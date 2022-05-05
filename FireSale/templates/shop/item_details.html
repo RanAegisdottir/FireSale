@@ -10,6 +10,6 @@
         <p>{{ Item.description }}</p>
         <p>{{ Item.priceidea }} $</p>
         <p>Condition: {{ Item.condition }}</p>
-        <p>Seller: {{ Item.seller.name }}</p>
+        <a href="{% url "myprofile-index" %}"><p>Seller: {{ Item.seller.name }}</p></a>
     </div>
 {% endblock %}

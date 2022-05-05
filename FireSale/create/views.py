@@ -14,6 +14,7 @@ def create_item(request):
             item = form.save()
             item_image = ItemImage(imgURL=request.POST['image'], item=item)
             item_image.save()
+            request.user.save()
             return redirect('shop-index')
     else:
         form = ItemCreateForm()
