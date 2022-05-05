@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 
 def index(request):
-    return
+    return render(request, 'notification/notifications.html')
