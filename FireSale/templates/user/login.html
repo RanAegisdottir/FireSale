@@ -1,10 +1,22 @@
+{% extends 'base_login.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+
+
 {% block content %}
-    <li class="button">
-        <a class="button" href="{% url 'register' %}">Register</a>
-    </li>
-    <form method="post", class="form form-horizontal">
+    <div class="login_container">
+    <div id="register_info">
+    <a class="register_button" href="{% url 'register' %}">Register</a>
+        <p id="no_account">Don't have an account?</p>
+    </div>
+
+    <div id="user_pass_input">
+    <form method="post", class="form form_horizontal login_form">
         {% csrf_token %}
         {{ form }}
-    <input type="submit" class="btn btn-primary" value="Login">
+
+    <input type="submit" class="btn btn_primary login_button" value="Login">
     </form>
+    </div>
+    </div>
 {% endblock %}
