@@ -12,8 +12,12 @@ a, a:hover {
 }
 
 /*profile myndin í horninu og eldurinn/stjörnunar sem fylgja*/
-.profile-img {
+.profile_img_nav {
     float: right;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /*hafa lit á textanum í navbar, ATH virkar ekki*/
