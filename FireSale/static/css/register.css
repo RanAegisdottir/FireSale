@@ -1,0 +1,56 @@
+
+
+/*login button*/
+.button {
+    height: 35px;
+    padding: 5px 15px;
+    margin: 15px;
+    margin-left: 45px;
+    border-radius: 5%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: black;
+    align: left
+}
+
+
+.button:hover {
+    background-color: #FF903F;
+    color: black;
+}
+
+
+#have_an_account {
+    width: 200px;
+    margin: 10px;
+    margin-left: 10px;
+    color: #F97D24;
+    height: 40px;
+}
+#login_info {
+    margin: 30px;
+    align: left
+}
+
+#register_input {
+    margin-left: 34%;
+    margin-right: 26%;
+    color: #FF903F;
+}
+
+#sign_up_text {
+    margin: 10px;
+    margin-left: 38%;
+    color: red;
+}
+
+.signup_button {
+    color: #F97D24;
+    background-color: #F97D24;
+    width: 100px;
+    padding: 5px 15px;
+    margin: 15px 125px;
+    border-radius: 10%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+

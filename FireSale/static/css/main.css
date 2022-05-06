@@ -41,11 +41,23 @@ a, a:hover {
     color: #f97224;
     width: 40%;
     float: right;
+    padding-right: 50px;
 }
 
-/*fjarlægja seinna*/
-.red {
+.detail-title-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-offer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.detail-similar {
+    clear: both;
     color: #f97224;
+    padding-top: 50px;
 }
 
 .products {

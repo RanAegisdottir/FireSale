@@ -1,12 +1,19 @@
+{% extends 'base_register.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+
 
 {% block content %}
-    <h1>Sign up now!</h1>
-    <li class="button">
-        <a class="button" href="{% url 'login' %}">Login</a>
-    </li>
+    <div id=login_info>
+    <a class="button" href="{% url 'login' %}">Login</a>
+    <p id="have_an_account">Do you have an account?</p>
+    </div>
+    <h1 id="sign_up_text">Sign up now!</h1>
+    <div id="register_input">
     <form class="form form-horizontal" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" class="btn btn-primary" value="Sign up" />
+        <input type="submit" class="btn btn-primary signup_button" value="Sign up" />
     </form>
+    </div>
 {% endblock %}
