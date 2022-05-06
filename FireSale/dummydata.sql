@@ -50,3 +50,5 @@ INSERT INTO checkout_payments ("userID_id", card_name, card_num, exdate, "CVC", 
 INSERT INTO checkout_order ("offerID_id", "payID_id") VALUES(3, 4);
 INSERT INTO checkout_reviews (text, rating, order_id) VALUES('good', 3, 3);
 INSERT INTO checkout_stars (star_img, star_num, user_id) VALUES('Star', 3, 3);
+
+INSERT INTO notification_notifications (offer_id, seller_id) VALUES(1, 3);
