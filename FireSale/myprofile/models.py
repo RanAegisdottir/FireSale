@@ -2,6 +2,9 @@ from django.conf import settings
 from django.db import models
 
 #Þurfum ekki þessa töflu
+
+
+
 class Users(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
     bio = models.CharField(max_length=300, default=None)
