@@ -7,7 +7,8 @@ from django.conf import settings
 
 # Create your views here.
 def index(request):
-    return render(request, 'myprofile/account.html', {'Users': request.user, 'Image': UserImage.objects.get(user_id=request.user.id)})
+    contex = {'Users': request.user, 'Image': UserImage.objects.get(user_id=request.user.id)}
+    return render(request, 'myprofile/account.html', contex)
 
 
 # def anchor(url_name, section_id):
