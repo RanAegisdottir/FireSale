@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.urls import reverse
+
 from myprofile.models import UserImage
 from django.conf import settings
 
@@ -8,5 +10,5 @@ def index(request):
     return render(request, 'myprofile/account.html', {'Users': request.user, 'Image': UserImage.objects.all()})
 
 
-def get_profile_info(request):
-    return render(request.user)
+# def anchor(url_name, section_id):
+#     return reverse(url_name) + '#' + section_id
