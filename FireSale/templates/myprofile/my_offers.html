@@ -4,7 +4,7 @@
         <h1 class="profile_title">My Offers</h1>
         <div class="item_container">
             {% comment %}{% for item_offer in --- %}
-                {% if item_offer.avalibe == true %}
+                {% if item_offer.accepted == false %}
                     {% include 'myprofile/single_offer.html' %}
                 {% endfor %}
             {% endfor %}{% endcomment %}
