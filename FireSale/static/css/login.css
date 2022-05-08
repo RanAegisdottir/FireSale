@@ -40,9 +40,10 @@
 
 /*both username and password input boxes*/
 #user_pass_input {
-    align-content: center;
-    margin-left: 40%;
-    margin-right: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0% 50%;
     color: #F97D24;
 }
 

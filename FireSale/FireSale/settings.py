@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'myprofile.apps.MyprofileConfig',
     'checkout.apps.CheckoutConfig',
     'notification.apps.NotificationConfig',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'django_countries'
 ]
 
 MIDDLEWARE = [
@@ -135,5 +136,5 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = '/user/login'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/user'
+LOGIN_REDIRECT_URL = '/shop'

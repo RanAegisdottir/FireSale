@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from myprofile.models import UserImage
-from shop.models import Offers, ItemImage
+from shop.models import Offers, ItemImage, Item
 from checkout.models import Order, Payments
+
+
 
 # Create your views here.
 def index(request):
@@ -37,6 +39,7 @@ def purchases(request):
 
 def my_items(request):
     return render(request, 'myprofile/my_items.html', {
+        'my_items_products': Item.objects.filter(seller=request.user.id, available=True),
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id)
     })
@@ -44,6 +47,7 @@ def my_items(request):
 
 def sold(request):
     return render(request, 'myprofile/sold.html', {
+        'sold_products': Item.objects.filter(seller=request.user.id, available=False),
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id)
     })

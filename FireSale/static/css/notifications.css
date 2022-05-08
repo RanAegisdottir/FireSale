@@ -1,0 +1,55 @@
+.My_notifications {
+    margin: 2% 0%;
+    color: #f97224;
+}
+
+
+.item_name {
+    border-bottom: #FF903F;
+}
+
+
+.single_notification {
+    margin: 5% 20%;
+    margin-bottom: 4%;
+    padding: 25px;
+    padding-bottom: 55px ;
+    background-color: #FF903F;
+    border: 2px solid #f97224;
+    border-radius: 10px;
+}
+
+ #bell {
+     margin: 2% 0%;
+     height: 45px;
+     width: 45px;
+ }
+
+ .header_notification {
+     display: flex;
+     flex-direction: row;
+     margin: 3% 38%
+ }
+
+ .checkout_link {
+     display: flex;
+     flex-direction: row;
+     float: right;
+     border: 2px solid #06C421;
+     color: #06C421;
+     background-color: white;
+     padding: 8px 30px;
+
+ }
+
+ .checkout_link:hover {
+     color: white;
+     background-color: #06C421;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+ }
+
+ .notify_text_info {
+     display: block;
+ }
+

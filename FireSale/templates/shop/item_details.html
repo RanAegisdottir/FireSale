@@ -11,10 +11,19 @@
             <h1>{{ Item.name }}</h1>
             <p>Price from seller: $ {{ Item.priceidea }}</p>
         </div>
-        <div class="detail-text">
-            <p class="orange-text">Seller:</p><p class="black-text"> {{ Item.seller.username}}</p>
-            <p class="orange-text">Condition:</p><p class="black-text"> {{ Item.condition }}</p>
-            <p class="orange-text">Description:</p><p class="black-text">{{ Item.description }}</p>
+        <div class="flex-break">
+            <p class="orange-text">Seller:</p>
+            <p class="black-text"> {{ Item.seller.username}}</p>
+        </div>
+        <div class="flex-break">
+            <p class="orange-text">Condition:</p>
+            <p class="black-text"> {{ Item.condition }}</p>
+        </div>
+        <div class="flex-break">
+            <p class="orange-text">Description:</p>
+        </div>
+        <div class="flex-break">
+        <p class="black-text">{{ Item.description }}</p>
         </div>
         <div class="detail-offer">
             <p>Your offer: </p>
