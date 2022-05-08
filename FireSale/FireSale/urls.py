@@ -17,13 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('shop.urls')),
+    path('', include('user.urls')),
+    path('shop', include('shop.urls')),
     path('admin/', admin.site.urls),
     path('shop/', include('shop.urls')),
     path('create/', include('create.urls')),
     path('myprofile/', include('myprofile.urls')),
     path('checkout/', include('checkout.urls')),
-    path('user/', include('user.urls')),
     path('notification/', include('notification.urls'))
 
 ]
