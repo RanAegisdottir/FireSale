@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from myprofile.models import UserImage
-from shop.models import Offers
+from shop.models import Offers, Item
+
 
 
 # Create your views here.
@@ -21,7 +22,7 @@ def edit_profile(request):
 def my_offers(request):
     return render(request, 'myprofile/my_offers.html', {
         'Users': request.user,
-        'Image': UserImage.objects.get(user_id=request.user.id),
+        'Image': UserImage.objects.all.get(user_id=request.user.id),
         'Offers': Offers.objects.all()
     })
 
@@ -35,6 +36,7 @@ def purchases(request):
 
 def my_items(request):
     return render(request, 'myprofile/my_items.html', {
+        'my_items_products': Item.objects.filter(seller=request.user.id),
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id)
     })
