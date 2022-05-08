@@ -1,9 +1,9 @@
 $(document).ready(function() {
-    $('#search-btn').on('click', function (e) {
+    $('#search-btn').on('click', function(e) {
         e.preventDefault()
         var searchText = $('#search-box').val();
         $.ajax({
-            url: 'shop/?search_filter=' + searchText,
+            url: '/shop?search_filter=' + searchText,
             type: 'GET',
             success: function (resp) {
                 var newHTML = resp.data.map(d => {
@@ -11,7 +11,6 @@ $(document).ready(function() {
                         '<a href="/shop/${d.id}"></a>' +
                         '<img class="item-img" src="${d.image}"/>' +
                         '<h4>${d.name}</h4>' +
-                        '<p>${d.description}</p>' +
                         '</div>'
                 });
                 $('.products').html(newHTML.join(''));
