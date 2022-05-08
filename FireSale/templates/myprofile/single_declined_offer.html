@@ -1,0 +1,16 @@
+<div class="declined_offer_container">
+    {% for item_img in ItemImage %}
+        {% if item_img.item.id == order.Offers.Item.id %}
+            <img class="offer_item_img" src="{{ item_img.imgURL }}" alt="{{ order.Offers.Item.name }} image" >
+        {% endif %}
+    {% endfor %}
+    <div class="offer_info_container">
+        <h5 class="offer_item_title">{{ order.Offers.Item.name}}</h5>
+{#        <button class="cancel_offer_btn" >X</button>#}
+        <div class="offer_info_inner_container">
+            <p class="offer_state_title">Declined<br>$ {{ order.Offers.amount }}</p>
+
+        </div>
+    </div>
+    <hr class="divider">
+</div>
