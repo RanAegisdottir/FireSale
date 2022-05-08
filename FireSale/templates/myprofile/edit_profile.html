@@ -5,11 +5,7 @@
         <h1 class="profile_title">Edit Profile</h1>
         <div class="profile_info_flex">
             <div class="profile_img_container">
-                {% for user_img in Image %}
-                    {% if user_img.user_id == Users.id %}
-                    <img class="profile_img" src="{{ user_img.user_image }}">
-                   {% endif %}
-                {% endfor %}
+                    <img class="profile_img" src="{{ Image.user_image }}">
                 <button class="edit_btn edit_profile_img_btn">Change Picture</button>
             </div>
 
