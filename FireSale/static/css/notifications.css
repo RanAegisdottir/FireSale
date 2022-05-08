@@ -1,0 +1,14 @@
+
+.My_notifications {
+    margin: 2% 40%;
+    color: #f97224;
+}
+
+.item_name {
+    border-bottom: #FF903F;
+}
+
+.single_notification {
+    margin: 0% 20%;
+    border-bottom: black;
+}

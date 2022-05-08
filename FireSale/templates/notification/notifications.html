@@ -1,4 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
-    <h2>Your notifications!</h2>
+    <div class="notification_container">
+        <h2 class="My_notifications">My Notifications</h2>
+         <img src="{% static 'images/notification_bell.png' %}" alt="bell" width="60" height="60">
+        <div class="all_notifications">
+            {% for notif in Notification reversed %}
+                {% include 'notification/single_notification.html' with notif=notif %}
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
