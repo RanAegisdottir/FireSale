@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from create.forms.item_form import ItemCreateForm
+from myprofile.models import UserImage
 from shop.models import ItemImage, Item
 
 
@@ -25,5 +26,6 @@ def create_item(request):
     else:
         form = ItemCreateForm()
     return render(request, 'create/create_item.html', {
-        'form': form
+        'form': form,
+        'Image': UserImage.objects.get(user_id=request.user.id)
     })

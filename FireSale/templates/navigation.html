@@ -21,6 +21,9 @@
               <a class="nav-links" href="{% url 'create-index' %}">Create Item</a>
           </li>
           <li class="nav-item">
+              <a class="nav-links" href="{% url 'notification-index' %}">Notifications</a>
+          </li>
+          <li class="nav-item">
               <a class="nav-links" href="{% url 'login' %}">Log out</a>
           </li>
       </ul>
@@ -28,7 +31,12 @@
       <!-- profile mynd og stars/fire -->
       <a href="{% url 'myprofile-index' %}" class="profile-img">
           <img src="{% static 'images/fire stars.png' %}" alt="rating" width="120" height="30">
-          <img src="{% static 'images/bubble profile.png' %}" alt="profile" width="60" height="60">
+{#          {% for user_img in Image %}#}
+{#                {% if user_img.user_id == Users.id %}#}
+          <img class="profile_img_nav" src="{{ Image.user_image }}" alt="{% static 'images/default_profile.png' %}">
+{#                {% endif %}#}
+{#          {% endfor %}#}
+          <!--<img src="{% static 'images/bubble profile.png' %}" alt="profile" width="60" height="60">-->
       </a>
   </div>
 </nav>

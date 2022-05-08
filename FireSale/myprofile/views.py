@@ -40,4 +40,3 @@ def sold(request):
         'Users': request.user
     })
 
-

@@ -4,6 +4,16 @@ a, a:hover {
     text-decoration: none;
 }
 
+.black-text {
+    color: black;
+    padding-right: 70px;
+}
+
+.orange-text {
+    color: #f97224;
+    padding-right: 20px;
+}
+
 /*fire line-ið*/
 .nav-image img {
     position: absolute;
@@ -12,8 +22,12 @@ a, a:hover {
 }
 
 /*profile myndin í horninu og eldurinn/stjörnunar sem fylgja*/
-.profile-img {
+.profile_img_nav {
     float: right;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /*hafa lit á textanum í navbar, ATH virkar ekki*/
@@ -24,15 +38,17 @@ a, a:hover {
 
 /*mynd í item detail*/
 .float-container {
-    margin-top: 40px;
+    display: flex;
+    margin: 20px;
     color: #f97224;
     float: left;
     width: 50%;
-    margin-right: 20px;
 }
 .float-container img {
-    max-width: 100%;
-    display: inline;
+    padding-top: 20px;
+    width: 700px;
+    height: 700px;
+    object-fit: contain;
 }
 
 /*texti með upplýsingum í item detail*/
@@ -48,6 +64,12 @@ a, a:hover {
     display: flex;
     justify-content: space-between;
 }
+
+.detail-text {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 
 .detail-offer {
     display: flex;
@@ -102,12 +124,15 @@ a, a:hover {
     margin-top: 60px;
     width: 25%;
     float: right;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
-.search-bar {
-    width: 70%;
-    margin-left: 30px;
+.filter {
+    margin-top: 20px;
 }
+
 .search-input {
     color: #f97224;
     outline: 0;
