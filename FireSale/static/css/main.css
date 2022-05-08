@@ -1,3 +1,12 @@
+.shop_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 50%;
+    color: #f97224;
+}
+
+
 /*fyrir alla hlekki á síðunni, fjarlægja undirlínu og hafa sama lit*/
 a, a:hover {
     color: #f97224;
