@@ -1,14 +1,43 @@
-from django.shortcuts import render
-from django.urls import reverse
-
+from django.shortcuts import render, get_object_or_404
 from myprofile.models import UserImage
-from django.conf import settings
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'myprofile/account.html', {'Users': request.user, 'Image': UserImage.objects.all()})
+    return render(request, 'myprofile/account.html', {
+        'Users': request.user,
+        'Image': UserImage.objects.all()
+    })
 
 
-# def anchor(url_name, section_id):
-#     return reverse(url_name) + '#' + section_id
+def edit_profile(request):
+    return render(request, 'myprofile/edit_profile.html', {
+        'Users': request.user,
+        'Image': UserImage.objects.all()
+    })
+
+
+def my_offers(request):
+    return render(request, 'myprofile/my_offers.html', {
+        'Users': request.user
+    })
+
+
+def purchases(request):
+    return render(request, 'myprofile/purchases.html', {
+        'Users': request.user
+    })
+
+
+def my_items(request):
+    return render(request, 'myprofile/my_items.html', {
+        'Users': request.user
+    })
+
+
+def sold(request):
+    return render(request, 'myprofile/sold.html', {
+        'Users': request.user
+    })
+
+

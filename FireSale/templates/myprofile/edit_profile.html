@@ -1,4 +1,32 @@
 {% extends 'base-profile.html' %}
 {% block sub_content %}
-    {# Add edit profile form here #}
+
+    <div class="profile_container">
+        <h1 class="profile_title">Edit Profile</h1>
+        <div class="profile_info_flex">
+            <div class="profile_img_container">
+                {% for user_img in Image %}
+                    {% if user_img.user_id == Users.id %}
+                    <img class="profile_img" src="{{ user_img.user_image }}">
+                   {% endif %}
+                {% endfor %}
+                <button class="edit_btn edit_profile_img_btn">Change Picture</button>
+            </div>
+
+            <div class="profile_info_container">
+                <h3 class="user_name edit_username">{{ Users.username | capfirst }}</h3>
+                <button class="edit_btn edit_username_btn">Change Username</button>
+                <div class="flex_break"></div>
+                <p class="user_bio">Curabitur pulvinar cursus velit, ut laoreet ex blandit eu. Fusce vitae magna egestas, sodales quam non, ultrices dui.
+                    Nunc interdum tellus quis mattis auctor. Vivamus venenatis ullamcorper felis in mollis. Pellentesque egestas ultricies purus,
+                    id eleifend nulla efficitur eget. Maecenas eget consequat risus. Nam et hendrerit massa. Phasellus maximus nisi dolor,
+                    id pellentesque dolor tristique id. Duis eu porta quam. Donec venenatis eu massa in pulvinar.
+                </p>
+                <div class="flex_break"></div>
+                <button class="edit_btn edit_bio_btn">Change Bio</button>
+            </div>
+
+        </div>
+
+    </div>
 {% endblock %}

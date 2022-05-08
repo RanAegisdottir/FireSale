@@ -10,65 +10,71 @@
                    {% endif %}
                 {% endfor %}
             </div>
-
             <div class="profile_info_container">
-                <h3 class="user_name">{{ Users.username }}</h3>
-                <div class="rating_img_container">
-                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png" >
-                </div>
-                <p class="user_bio">Curabitur pulvinar cursus velit, ut laoreet ex blandit eu. Fusce vitae magna egestas, sodales quam non, ultrices dui.
-                    Nunc interdum tellus quis mattis auctor. Vivamus venenatis ullamcorper felis in mollis. Pellentesque egestas ultricies purus,
-                    id eleifend nulla efficitur eget. Maecenas eget consequat risus. Nam et hendrerit massa. Phasellus maximus nisi dolor,
-                    id pellentesque dolor tristique id. Duis eu porta quam. Donec venenatis eu massa in pulvinar.
-                </p>
+                <h3 class="user_name">{{ Users.username | capfirst }}</h3>
+                <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png" >
+                <div class="flex_break"></div>
+                <p class="user_bio">Curabitur pellentesque magna ligula, facilisis volutpat risus nec, malesuada egestas justo.
+                    Nullam mattis vel dui at placerat. Cras in finibus lectus. Morbi nec lectus vestibulum,
+                    aliquam purus at, suscipit lectus. Vestibulum condimentum rhoncus mauris ac volutpat. Sed tincidunt,
+                    eros eu ultricies venenatis, ipsum orci sodales diam, a imperdiet urna ligula ut. </p>
             </div>
-
         </div>
-
     </div>
 
     <hr class="divider">
 
-    <div class="profile_review_container">
+    <div class="profile_review_container" id="review_section1">
         <h1 class="profile_title">Reviews</h1>
         <h5 class="profile_sub_title">(? Reviews)</h5>
-
-{#        Dummy data sem þarf að breyta          #}
+{#    -------------------- Dummy data sem þarf að breyta ---------------------------          #}
         <div class="review_info_container">
-            <h4 class="reviewer_name">Lára Björk</h4>
-            <div class="rating_img_container">
-                <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png">
-            </div>
+            <h3 class="reviewer_name">Amber Heard</h3>
+            <div class="flex_break"></div>
+            <h5 class="review_sub_title">Item: </h5>
+            <p>Pink Coffee Table</p>
+            <div class="flex_break"></div>
+            <h5 class="review_sub_title">Rating:</h5>
+            <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png">
+            <div class="flex_break"></div>
             <p class="review_text">
-                Pellentesque est orci, rhoncus sit amet magna at, luctus consequat tellus. Aliquam tincidunt neque felis,
-                at porta nulla finibus non. Pellentesque vel eros nunc. Aenean sed mauris et ipsum egestas.
+                I love this table! I have wanted one since I was 10 years old. My dream has come true,
+                the seller was a bit iffy but came through in the end.
             </p>
         </div>
         <hr class="review_divider">
 
         <div class="review_info_container">
-            <h4 class="reviewer_name">Birnir Jakobs</h4>
-            <div class="rating_img_container">
-                <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png">
-            </div>
+            <h3 class="reviewer_name">Daði Már</h3>
+            <div class="flex_break"></div>
+            <h5 class="review_sub_title">Item: </h5>
+            <p>Plast Sokkar</p>
+            <div class="flex_break"></div>
+            <h5 class="review_sub_title">Rating:</h5>
+            <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png">
+            <div class="flex_break"></div>
             <p class="review_text">
-                Pellentesque est orci, rhoncus sit amet magna at, luctus consequat tellus. Aliquam tincidunt neque felis,
-                at porta nulla finibus non. Pellentesque vel eros nunc. Aenean sed mauris et ipsum egestas.
+                Frekar svekktur, það var gat í sokkunm þegar ég fékk þær og tók mánuð að fá þá.
             </p>
         </div>
         <hr class="review_divider">
 
         <div class="review_info_container">
-            <h4 class="reviewer_name">Katrín Jónsdóttir</h4>
-            <div class="rating_img_container">
-                <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png">
-            </div>
+            <h3 class="reviewer_name">Silvester Stalone</h3>
+            <div class="flex_break"></div>
+            <h5 class="review_sub_title">Item: </h5>
+            <p>Iphone Super Max 22</p>
+            <div class="flex_break"></div>
+            <h5 class="review_sub_title">Rating:</h5>
+            <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png">
+            <div class="flex_break"></div>
             <p class="review_text">
-                Pellentesque est orci, rhoncus sit amet magna at, luctus consequat tellus. Aliquam tincidunt neque felis,
-                at porta nulla finibus non. Pellentesque vel eros nunc. Aenean sed mauris et ipsum egestas.
+                Gekk mjög vel að kaupa og sækja, síminn var frábær og alveg eins og stóð í lýsingunni,
+                allt í top standi. Gef 5 stjörnur og myndi klárlega mæla með seljanda. Takk fyrir viðskiptin!
             </p>
         </div>
         <hr class="review_divider">
+
     </div>
 {#         -----------------------------        #}
 {% endblock %}

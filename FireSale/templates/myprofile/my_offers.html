@@ -1,0 +1,24 @@
+{% extends 'base-profile.html' %}
+{% block sub_content %}
+    <div class="profile_container">
+        <h1 class="profile_title">My Offers</h1>
+        <div class="item_container">
+            {% comment %}{% for item_offer in --- %}
+                {% if item_offer.avalibe == true %}
+                    {% include 'myprofile/single_offer.html' %}
+                {% endfor %}
+            {% endfor %}{% endcomment %}
+        </div>
+    </div>
+    <hr class="divider">
+    <div class="profile_container">
+        <h1 class="profile_title">Declined Offers</h1>
+        <div class="item_container">
+            {% comment %}{% for item_offer in --- %}
+                {% if item_offer.avalibe == false %}
+                    {% include 'myprofile/single_offer.html' %}
+                {% endfor %}
+            {% endfor %}{% endcomment %}
+        </div>
+    </div>
+{% endblock %}
