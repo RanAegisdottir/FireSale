@@ -42,9 +42,8 @@
 #user_pass_input {
     display: flex;
     flex-direction: column;
-    align-content: center;
-    /*margin-left: 40%;*/
-    /*margin-right: 40%;*/
+    align-items: center;
+    margin: 0% 50%;
     color: #F97D24;
 }
 
