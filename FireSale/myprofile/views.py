@@ -36,7 +36,7 @@ def purchases(request):
 
 def my_items(request):
     return render(request, 'myprofile/my_items.html', {
-        'my_items_products': Item.objects.filter(seller=request.user.id),
+        'my_items_products': Item.objects.filter(seller=request.user.id, available=True),
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id)
     })
@@ -44,6 +44,7 @@ def my_items(request):
 
 def sold(request):
     return render(request, 'myprofile/sold.html', {
+        'sold_products': Item.objects.filter(seller=request.user.id, available=False),
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id)
     })
