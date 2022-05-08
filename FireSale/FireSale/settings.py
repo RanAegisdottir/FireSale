@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'myprofile.apps.MyprofileConfig',
     'checkout.apps.CheckoutConfig',
     'notification.apps.NotificationConfig',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'django_countries'
 ]
 
 MIDDLEWARE = [
