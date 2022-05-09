@@ -36,8 +36,12 @@
         <!--ef við viljum hafa það þannig að við förum inn á seller profile í item (b-krafa)-->
         {#<a href="{% url "myprofile-index" id=Item.user.id %}"><p>Seller: {{ Item.seller.name }}</p></a>#}
     </div>
+    <!--similar items ATH virkar ekki-->
     <div class="detail-similar">
         <h2>Similar items</h2>
+        {% for Item in products %}
+            {% include 'shop/similar_item.html' with Item=Item %}
+        {% endfor %}
     </div>
 </body>
 {% endblock %}
