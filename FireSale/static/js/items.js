@@ -6,8 +6,7 @@ $(document).ready(function() {
             url: '/shop?search_filter=' + searchText,
             type: 'GET',
             success: function (resp) {
-                console.log(resp.data)
-                var newHTML = resp.data.map(d => {
+                let newHTML = resp.data.map(d => {
                     return `<div class="product">
                             <a href="/shop/${ d.id }">
                             <img class="item-img" src="${ d.image }" />

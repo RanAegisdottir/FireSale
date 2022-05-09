@@ -26,6 +26,7 @@ def get_item_by_id(request, id):
     return render(request, 'shop/item_details.html', {
         'products': products,
         'Item': get_object_or_404(Item, pk=id),
-        'Image': UserImage.objects.get(user_id=request.user.id),
-        'UserInfo': Users.objects.get(user_id=request.user.id)
+        'UserInfo': Users.objects.get(user_id=request.user.id),
+        'Image': UserImage.objects.get(user_id=request.user.id)
     })
+

@@ -1,10 +1,7 @@
 from django.shortcuts import render, redirect
 from checkout.models import Payments
 from checkout.forms.checkout_form import CheckoutForm
-
-
-# Create your views here.
-from myprofile.models import Users, UserImage
+from myprofile.models import UserImage, Users
 
 
 def index(request):
@@ -29,9 +26,19 @@ def checkout_payment(request):
             payment = Payments(userID=request.user, card_name=card_name, card_num=card_num, exdate=exdate, CVC=cvc,
                                companyname=company_name, country=country, street=street, zip=zip, city=city, phone=phone)
             payment.save()
-            return redirect('myprofile-index')
+            return render(request, 'checkout/confirm.html', {
+                'payment': Payments.objects.get(id=payment.id),
+                'Image': UserImage.objects.get(user_id=request.user.id)})
 
     else:
         form = CheckoutForm()
-    return render(request, 'checkout/checkout_payment.html', {'form': form})
+    return render(request, 'checkout/checkout_payment.html', {
+        'form': form,
+        'Image': UserImage.objects.get(user_id=request.user.id),
+        'UserInfo': Users.objects.get(user_id=request.user.id)})
 
+
+def confirm(request, payment_id):
+    return render(request, 'checkout/confirm.html', {
+        'payment': Payments.objects.get(id=payment_id),
+        'Image': UserImage.objects.get(user_id=request.user.id)})

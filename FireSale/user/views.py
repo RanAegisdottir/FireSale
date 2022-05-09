@@ -14,5 +14,6 @@ def register(request):
             user_info.save()
             return redirect('login')
     return render(request, 'user/register.html', {
-        'form': UserCreationForm()
+        'form': UserCreationForm(),
+        'UserInfo': Users.objects.get(user_id=request.user.id)
     })
