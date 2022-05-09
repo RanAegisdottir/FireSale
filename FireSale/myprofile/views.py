@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from myprofile.models import UserImage
-from shop.models import Offers, Item
-from checkout.models import Order
+from shop.models import Offers, ItemImage, Item
+from checkout.models import Order, Payments
+
 
 
 
@@ -23,8 +24,10 @@ def edit_profile(request):
 def my_offers(request):
     return render(request, 'myprofile/my_offers.html', {
         'Users': request.user,
-        'Image': UserImage.objects.all.get(user_id=request.user.id),
-        'Offers': Offers.objects.all()
+        'Image': UserImage.objects.get(user_id=request.user.id),
+        'Offers': Offers.objects.filter(buyer_id=request.user.id),
+        'ItemImage': ItemImage.objects.all(),
+        'Orders': Order.objects.all()
     })
 
 

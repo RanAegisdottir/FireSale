@@ -1,0 +1,27 @@
+<div class="available_offer_container">
+    {% for item_img in ItemImage %}
+        {% if item_img.item.id == offer.item.id %}
+            <img class="offer_item_img" src="{{ item_img.imgURL }}" alt="{{ offer.item.name }} image" >
+        {% endif %}
+    {% endfor %}
+    <div class="offer_info_container">
+        <h5 class="offer_item_title">{{ offer.item.name | capfirst}}</h5>
+        <button class="cancel_offer_btn" >X</button>
+        <div class="flex_break"></div>
+            {% if offer.accepted %}
+                <p class="offer_state_title green">Accepted<br>$ {{ offer.amount }}</p>
+                <div class="flex_break"></div>
+                <button class="edit_btn offer_btn">CHECKOUT</button>
+
+                {% elif not offer.accepted and offer.outbid %}
+                    <p class="offer_state_title red">Outbid<br>$ {{ offer.amount }}</p>
+                    <div class="flex_break"></div>
+                    <button class="edit_btn offer_btn orange">BID AGAIN</button>
+
+                {% elif not offer.accepted and not offer.outbid %}
+                    <p class="offer_state_title yellow">Pending...<br>$ {{ offer.amount }}</p>
+                    <div class="flex_break"></div>
+            {% endif %}
+    </div>
+    <hr class="offer_divider">
+</div>

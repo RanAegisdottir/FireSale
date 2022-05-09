@@ -32,3 +32,4 @@ class Offers(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE, default=None)
     amount = models.FloatField(default=None)
     accepted = models.BooleanField(default=None)
+    outbid = models.BooleanField(default=False)

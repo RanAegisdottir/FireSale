@@ -3,22 +3,24 @@
     <div class="profile_container">
         <h1 class="profile_title">My Offers</h1>
         <div class="item_container">
-            {% comment %}{% for item_offer in --- %}
-                {% if item_offer.accepted == false %}
-                    {% include 'myprofile/single_offer.html' %}
-                {% endfor %}
-            {% endfor %}{% endcomment %}
+            {% for offer in Offers %}
+                {% if offer.Item.available == true %}
+                    {% include 'myprofile/single_avalible_offer.html' %}
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
     <hr class="divider">
     <div class="profile_container">
         <h1 class="profile_title">Declined Offers</h1>
         <div class="item_container">
-            {% comment %}{% for item_offer in --- %}
-                {% if item_offer.avalibe == false %}
-                    {% include 'myprofile/single_offer.html' %}
-                {% endfor %}
-            {% endfor %}{% endcomment %}
+            {% for order in Orders %}
+                {% if order.Offers.Item.available == false %}
+                    {% if order.Payments.userID != Users.id %}
+                        {% include 'myprofile/single_declined_offer.html' %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
