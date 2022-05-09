@@ -18,7 +18,8 @@ def index(request):
 def edit_profile(request):
     return render(request, 'myprofile/edit_profile.html', {
         'Users': request.user,
-        'Image': UserImage.objects.get(user_id=request.user.id)
+        'Image': UserImage.objects.get(user_id=request.user.id),
+        'UserInfo': Users.objects.get(user_id=request.user.id)
     })
 
 
