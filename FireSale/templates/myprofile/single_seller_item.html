@@ -1,0 +1,27 @@
+<div class="seller_item_container">
+    <img class="offer_item_img" src="{{ Item.itemimage_set.first.imgURL }}" alt="{{ Item.name }} image" />
+    <div class="offer_info_container">
+        <a href="/shop/{{ Item.id }}">
+            <h5 class="offer_item_title">{{ offer.item.name | capfirst}}</h5>
+        </a>
+        <button class="cancel_offer_btn" >X</button>
+        <div class="flex_break"></div>
+            {% for offer in Offers %}
+                {% if offer.item.id == Item.id %}
+{#                    GET THE HIGHEST OFFER#}
+                    <p class="offer_state_title green">Highest offer: <br>$ {{ offer.amount }}</p>
+                    <div class="flex_break"></div>
+                    <button class="edit_btn offer_btn">ACCEPT</button>
+
+{#                    IF SELLTER HAS ACCEPTED OFFER SHOW: 'PENDING' IF BUYER HAS NOT DONE CHECK OUT#}
+                {% elif %}
+                    <p class="offer_state_title yellow">Pending...<br>$ {{ offer.amount }}</p>
+                    <div class="flex_break"></div>
+                {% endif %}
+            {% empty %}
+{#                    IF THERE ARE NO OFFERS SHOW: 'NO OFFERS'#}
+                <p class="offer_state_title red">No offers<br></p>
+            {% endfor %}
+
+    </div>
+</div>
