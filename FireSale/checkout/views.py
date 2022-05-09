@@ -4,6 +4,9 @@ from checkout.forms.checkout_form import CheckoutForm
 
 
 # Create your views here.
+from myprofile.models import Users, UserImage
+
+
 def index(request):
     return render(request, 'checkout/index.html')
 

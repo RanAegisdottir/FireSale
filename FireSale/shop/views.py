@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
-from myprofile.models import UserImage
+from myprofile.models import UserImage, Users
 from shop.models import Item
 
 # Create your views here.
@@ -17,7 +17,8 @@ def index(request):
         return JsonResponse({'data': products})
 
     context = {'products': Item.objects.all().order_by('name'),
-               'Image': UserImage.objects.get(user_id=request.user.id)}
+               'Image': UserImage.objects.get(user_id=request.user.id),
+               'UserInfo': Users.objects.get(user_id=request.user.id)}
     return render(request, 'shop/index.html', context)
 
 def get_item_by_id(request, id):
@@ -25,5 +26,6 @@ def get_item_by_id(request, id):
     return render(request, 'shop/item_details.html', {
         'products': products,
         'Item': get_object_or_404(Item, pk=id),
-        'Image': UserImage.objects.get(user_id=request.user.id)
+        'Image': UserImage.objects.get(user_id=request.user.id),
+        'UserInfo': Users.objects.get(user_id=request.user.id)
     })
