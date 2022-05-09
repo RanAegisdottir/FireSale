@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from myprofile.models import UserImage, Users
 from shop.models import Offers, ItemImage, Item
-from checkout.models import Order, Payments
+from checkout.models import Order, Payments, Reviews
 
 
 
@@ -11,7 +11,11 @@ def index(request):
     return render(request, 'myprofile/account.html', {
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id),
+
+        # 'Reviews': Reviews.objects.filter()
+
         'UserInfo': Users.objects.get(user_id=request.user.id)
+
     })
 
 
@@ -46,7 +50,8 @@ def my_items(request):
     return render(request, 'myprofile/my_items.html', {
         'my_items_products': Item.objects.filter(seller=request.user.id, available=True),
         'Users': request.user,
-        'Image': UserImage.objects.get(user_id=request.user.id)
+        'Image': UserImage.objects.get(user_id=request.user.id),
+        'Offers': Offers.objects.all()
     })
 
 

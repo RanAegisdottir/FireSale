@@ -4,6 +4,7 @@
         <h1 class="profile_title">Items For Sale</h1>
         <div class="item_container">
             {% for Item in my_items_products %}
+{#                {% include 'myprofile/single_seller_item.html' with Item=Item %}#}
                 {% include 'shop/single_item.html' with Item=Item %}
             {% endfor %}
         </div>
