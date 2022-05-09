@@ -1,11 +1,3 @@
-.shop_header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5% 50%;
-    color: #f97224;
-}
-
 
 /*fyrir alla hlekki á síðunni, fjarlægja undirlínu og hafa sama lit*/
 a, a:hover {
@@ -33,13 +25,19 @@ a, a:hover {
 /*profile myndin í horninu og eldurinn/stjörnunar sem fylgja*/
 .profile_img_nav {
     float: right;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-/*hafa lit á textanum í navbar, ATH virkar ekki*/
+.profile-img {
+    display: flex;
+    align-items: center;
+}
+
+/*hafa lit á textanum í navbar*/
 .nav-links {
     color: #f97224;
     padding: 10px;
@@ -154,12 +152,13 @@ a, a:hover {
     border-bottom-color: lightgrey;
 }
 
-/*fóturinn neðst á síðunni
+/*fóturinn neðst á síðunni*/
 .footer {
-    background-color: #f97224;
-    height: 80px;
-    color: white;
+    clear: both;
     position: relative;
-    margin-top: 1200px;
+    height: 100px;
+    margin-top: -200px;
+    background-color: #f97224;
+    color: white;
+    margin-top: 50px;
 }
-*/
