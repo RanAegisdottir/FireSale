@@ -2,5 +2,5 @@
         <h4 class="item_name">{{ notif.offer.item.name }}</h4>
         <p id="item_accepted_text"> Your offer for {{ notif.offer.item.name }} has been accepted!</p>
         <p > Seller: {{ notif.seller }}</p>
-        <a href="{% url 'checkout-index' %}" class="checkout_link"> Go To Checkout </a>
+        <a href="{% url 'checkout-index' %}?offer-id={{ notif.offer.id }}" class="checkout_link"> Go To Checkout </a>
 </div>

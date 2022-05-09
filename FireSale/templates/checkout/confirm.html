@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
     <h2>Welcome to the confirmation page!</h2>
-    <h3 class="card_name">{{ payment.card_name | capfirst }}</h3>
+    <h3 class="card_name">{{ order.payID.card_name | capfirst }}</h3>
+    <h3 class="card_name">{{ order.offerID.item.name | capfirst }}</h3>
 {% endblock %}

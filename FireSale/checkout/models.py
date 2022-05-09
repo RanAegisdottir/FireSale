@@ -21,11 +21,13 @@ class Payments(models.Model):
     zip = models.IntegerField(default=None)
     city = models.CharField(max_length=255, default=None)
     phone = models.IntegerField(default=None)
+    confirmed = models.BooleanField(default=False)
 
 
 class Order(models.Model):
     offerID = models.ForeignKey(Offers, on_delete=models.CASCADE, default="")
     payID = models.ForeignKey(Payments, on_delete=models.CASCADE, default="")
+    confirmed = models.BooleanField(default=False)
 
 
 class Reviews(models.Model):
