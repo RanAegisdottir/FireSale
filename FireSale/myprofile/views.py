@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from myprofile.models import UserImage
 from shop.models import Offers, Item
+from checkout.models import Order
 
 
 
@@ -29,6 +30,8 @@ def my_offers(request):
 
 def purchases(request):
     return render(request, 'myprofile/purchases.html', {
+        'purchased_by': Order.objects.filter(payID__userID=request.user.id),
+        # 'same_user_in_offers': Offers.objects.filter(buyer=purchased_by, Item=item),
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id)
     })
