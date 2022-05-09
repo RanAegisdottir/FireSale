@@ -4,9 +4,9 @@
         <h1 class="profile_title">My Offers</h1>
         <div class="item_container">
             {% for offer in Offers %}
-                {% if offer.Item.available == true %}
+{#                {% if offer.amount = Item.higestoffer (Item.available == true) %}#}
                     {% include 'myprofile/single_avalible_offer.html' %}
-                {% endif %}
+{#                {% endif %}#}
             {% endfor %}
         </div>
     </div>

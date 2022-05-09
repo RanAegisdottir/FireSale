@@ -9,7 +9,24 @@
             </div>
             <div class="profile_info_container">
                 <h3 class="user_name">{{ Users.username | capfirst }}</h3>
-                <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png" >
+                {% if UserInfo.rating == 0 %}
+                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png" >
+                {% endif %}
+                {% if UserInfo.rating == 1 %}
+                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 1.png" >
+                {% endif %}
+                {% if UserInfo.rating == 2 %}
+                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 2.png" >
+                {% endif %}
+                {% if UserInfo.rating == 3 %}
+                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 3.png" >
+                {% endif %}
+                {% if UserInfo.rating == 4 %}
+                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 4.png" >
+                {% endif %}
+                {% if UserInfo.rating == 5 %}
+                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 5.png" >
+                {% endif %}
                 <div class="flex_break"></div>
                 <p class="user_bio">{{ UserInfo.bio }}</p>
             </div>
