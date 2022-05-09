@@ -17,9 +17,9 @@ def checkout_payment(request):
             city = form.cleaned_data.get('city')
             phone = form.cleaned_data.get('phone')
             country = form.cleaned_data.get('country')
-            company_name = form.cleaned_data.get('company_name')
+            company_name = form.cleaned_data.get('companyname')
             card_name = form.cleaned_data.get('card_name')
-            card_num = form.cleaned_data.get('card_number')
+            card_num = form.cleaned_data.get('card_num')
             exdate = form.cleaned_data.get('exdate')
             cvc = form.cleaned_data.get('CVC')
 

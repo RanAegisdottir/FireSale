@@ -58,3 +58,5 @@ INSERT INTO shop_offers (buyer_id, item_id, amount, accepted, outbid) VALUES(3, 
 INSERT INTO shop_offers (buyer_id, item_id, amount, accepted, outbid) VALUES(3, 12, 6500, false, false);
 INSERT INTO shop_offers (buyer_id, item_id, amount, accepted, outbid) VALUES(3, 13, 300, false, true);
 INSERT INTO shop_offers (buyer_id, item_id, amount, accepted, outbid) VALUES(2, 13, 600, true, false);
+
+INSERT INTO myprofile_users (bio, rating, user_id) VALUES('Ég heiti kristín og mér finnst gaman að leika mér', 3, 2);
