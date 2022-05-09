@@ -15,7 +15,7 @@ class Payments(models.Model):
     card_num = models.IntegerField(default=None)
     exdate = models.DateField(default=None)
     CVC = models.IntegerField(default=None)
-    companyname = models.CharField(max_length=255, default=None)
+    companyname = models.CharField(max_length=255, default=None, blank=True)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, default=None)
     street = models.CharField(max_length=255, default=None)
     zip = models.IntegerField(default=None)

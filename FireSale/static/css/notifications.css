@@ -28,7 +28,9 @@
  .header_notification {
      display: flex;
      flex-direction: row;
-     margin: 3% 40%
+     align-content: center;
+     margin-left: 38%;
+     margin-top: 5%;
  }
 
  .checkout_link {
