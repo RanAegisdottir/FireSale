@@ -4,20 +4,14 @@
         <h1 class="profile_title">Profile</h1>
         <div class="profile_info_flex">
             <div class="profile_img_container">
-{#                {% for user_img in Image %}#}
-{#                    {% if user_img.user_id == Users.id %}#}
-                    <img class="profile_img" src="{{ Image.user_image }}">
-{#                   {% endif %}#}
-{#                {% endfor %}#}
+                <img class="profile_img" src="{{ Image.user_image }}">
+
             </div>
             <div class="profile_info_container">
                 <h3 class="user_name">{{ Users.username | capfirst }}</h3>
                 <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png" >
                 <div class="flex_break"></div>
-                <p class="user_bio">Curabitur pellentesque magna ligula, facilisis volutpat risus nec, malesuada egestas justo.
-                    Nullam mattis vel dui at placerat. Cras in finibus lectus. Morbi nec lectus vestibulum,
-                    aliquam purus at, suscipit lectus. Vestibulum condimentum rhoncus mauris ac volutpat. Sed tincidunt,
-                    eros eu ultricies venenatis, ipsum orci sodales diam, a imperdiet urna ligula ut. </p>
+                <p class="user_bio">{{ UserInfo.bio }}</p>
             </div>
         </div>
     </div>

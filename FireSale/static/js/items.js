@@ -6,12 +6,15 @@ $(document).ready(function() {
             url: '/shop?search_filter=' + searchText,
             type: 'GET',
             success: function (resp) {
+                console.log(resp.data)
                 var newHTML = resp.data.map(d => {
-                    return '<div class="well item">' +
-                        '<a href="/shop/${d.id}"></a>' +
-                        '<img class="item-img" src="${d.image}"/>' +
-                        '<h4>${d.name}</h4>' +
-                        '</div>'
+                    return `<div class="product">
+                            <a href="/shop/${ d.id }">
+                            <img class="item-img" src="${ d.image }" />
+                            <h4>${ d.name }</h4>
+                            <p>$ ${ d.priceidea }</p>
+                            </a>
+                            </div>`
                 });
                 $('.products').html(newHTML.join(''));
                 $('#search-box').val('');

@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}" />
 {% block content  %}
 <body>
     <!--all products-->
@@ -12,7 +14,7 @@
         <div class="input-group">
             <input type="search" placeholder="Search..." class="form-control" id="search-box"/>
             <div class="input-group-btn">
-                <button type="button" id="search-btn" class="btn btn-default">Search</button>
+                <button type="button" id="search-btn" class="btn btn-default"><img src='{% static 'images/search icon.jpg' %}' height="20px" width="20px"/></button>
             </div>
         </div>
 
@@ -20,9 +22,9 @@
             <div class="d-flex g4 gsx ai-center sm:fd-column sm:ai-start">
             <div class="flex--item s-select">
                 <select id="answer-sort-dropdown-select-menu">
-                    <option value=scoredesc selected=selected>highest price</option>
-                    <option value=modifieddesc>lowest price</option>
-                    <option value=createdasc>alphabetical order</option>
+                    <option value=price-high selected=selected>highest price</option>
+                    <option value=price-low>lowest price</option>
+                    <option value=order-alpha>alphabetical order</option>
                 </select>
             </div>
             </div>
