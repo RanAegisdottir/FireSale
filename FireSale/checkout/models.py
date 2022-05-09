@@ -12,7 +12,7 @@ class Country(models.Model):
 class Payments(models.Model):
     userID = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
     card_name = models.CharField(max_length=255, default=None)
-    card_num = models.IntegerField(default=None)
+    card_num = models.BigIntegerField(default=None)
     exdate = models.DateField(default=None)
     CVC = models.IntegerField(default=None)
     companyname = models.CharField(max_length=255, default=None, blank=True)

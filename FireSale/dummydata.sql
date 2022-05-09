@@ -60,3 +60,9 @@ INSERT INTO shop_offers (buyer_id, item_id, amount, accepted, outbid) VALUES(3, 
 INSERT INTO shop_offers (buyer_id, item_id, amount, accepted, outbid) VALUES(2, 13, 600, true, false);
 
 INSERT INTO myprofile_users (bio, rating, user_id) VALUES('Ég heiti kristín og mér finnst gaman að leika mér', 3, 2);
+
+INSERT INTO myprofile_users (bio, rating, user_id) VALUES('Einar heldur að ég heiti Gunnhildur', 2, 3);
+INSERT INTO myprofile_users (bio, rating, user_id) VALUES('GummyBoy', 1, 10);
+INSERT INTO myprofile_users (bio, rating, user_id) VALUES('Im a weep', 5, 1);
+INSERT INTO myprofile_users (bio, rating, user_id) VALUES('Systir hennar Kristínar', 4, 11);
+INSERT INTO myprofile_users (bio, rating, user_id) VALUES('Ég bý á Mars', 2, 12);
