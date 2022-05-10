@@ -41,7 +41,6 @@ a.nav-links:hover {
 /*allur texti sem er merktur þessu er svartur (item page)*/
 .black-text {
     color: black;
-    padding-right: 70px;
 }
 
 /*allur texti sem er merktur þessu er appelsínugulur (item page)*/
@@ -79,7 +78,7 @@ a.nav-links:hover {
     justify-content: space-between;
 }
 
-.detail-text {
+.flex_break p {
     display: flex;
     flex-wrap: wrap;
 }
