@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <h2 id="checkout_header">Checkout</h2>
-    <form class="form form-horizontal" action="{% url 'checkout-payment' %}" method="post">
+    <form class="form form-horizontal" action="{% url 'checkout-payment' %}?offer-id={{ offer_id }}" method="post">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Checkout" class="btn btn-primary pull-right create_button" style="clear:both; margin: 10px 0" />

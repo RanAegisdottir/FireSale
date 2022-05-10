@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from checkout.models import Payments
+from checkout.models import Payments, Order
 from checkout.forms.checkout_form import CheckoutForm
 from myprofile.models import UserImage, Users
+from shop.models import Offers
 
 
 def index(request):
@@ -24,21 +25,40 @@ def checkout_payment(request):
             cvc = form.cleaned_data.get('CVC')
 
             payment = Payments(userID=request.user, card_name=card_name, card_num=card_num, exdate=exdate, CVC=cvc,
-                               companyname=company_name, country=country, street=street, zip=zip, city=city, phone=phone)
+                               companyname=company_name, country=country, street=street, zip=zip, city=city, phone=phone, confirmed=False)
             payment.save()
+            offer_id = request.GET.get('offer-id', '')
+            offer = Offers.objects.get(id=offer_id)
+            order = Order(offerID=offer, payID=payment, confirmed=False)
+            order.save()
             return render(request, 'checkout/confirm.html', {
-                'payment': Payments.objects.get(id=payment.id),
+                'order': Order.objects.get(id=order.id),
                 'Image': UserImage.objects.get(user_id=request.user.id)})
 
     else:
         form = CheckoutForm()
+        offer_id = request.GET.get('offer-id', '')
     return render(request, 'checkout/checkout_payment.html', {
         'form': form,
         'Image': UserImage.objects.get(user_id=request.user.id),
-        'UserInfo': Users.objects.get(user_id=request.user.id)})
+        'UserInfo': Users.objects.get(user_id=request.user.id),
+        'offer_id': offer_id})
 
 
 def confirm(request, payment_id):
     return render(request, 'checkout/confirm.html', {
         'payment': Payments.objects.get(id=payment_id),
         'Image': UserImage.objects.get(user_id=request.user.id)})
+
+
+
+def save(request):
+    payment_id = request.GET.get('payment-id', '')
+    payment = Payments.objects.get(id=payment_id)
+    order_id = request.GET.get('order-id', '')
+    order = Order.objects.get(id=order_id)
+    payment.confirmed = True
+    payment.save()
+    order.confirmed = True
+    order.save()
+    return render(request, 'checkout/save.html')

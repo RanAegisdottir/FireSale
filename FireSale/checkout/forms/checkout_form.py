@@ -4,7 +4,7 @@ from checkout.models import Payments
 class CheckoutForm(ModelForm):
     class Meta:
         model = Payments
-        exclude = ['id', 'userID']
+        exclude = ['id', 'userID', 'confirmed']
         widgets = {
             'street': widgets.TextInput(attrs={'class': 'form-control'}),
             'zip': widgets.TextInput(attrs={'class': 'form-control'}),
