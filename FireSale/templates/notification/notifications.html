@@ -8,7 +8,13 @@
         </div>
         <div class="all_notifications">
             {% for notif in Notification reversed %}
-                {% include 'notification/single_notification.html' with notif=notif %}
+                 {% if notif.offer.buyer == request.user and notif.offer.item.available and notif.offer.accepted %}
+                    {% include 'notification/single_notification.html' with notif=notif %}
+                 {% endif %}
+                 {% if notif.offer.buyer == request.user and not notif.offer.item.available and not notif.offer.accepted %}
+                    {% include 'notification/single_notification_declined.html' with notif=notif %}
+                 {% endif %}
+
             {% endfor %}
         </div>
     </div>

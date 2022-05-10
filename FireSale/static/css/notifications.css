@@ -19,6 +19,16 @@
     border-radius: 10px;
 }
 
+.single_notification_declined {
+    margin: 5% 20%;
+    margin-bottom: 4%;
+    padding: 25px;
+    padding-bottom: 55px ;
+    background-color: indianred;
+    border: 2px solid indianred;
+    border-radius: 10px;
+}
+
  #bell {
      margin: 2% 0%;
      height: 45px;
