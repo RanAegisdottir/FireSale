@@ -32,5 +32,5 @@ class Offers(models.Model):
     buyer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
     item = models.ForeignKey(Item, on_delete=models.CASCADE, default=None)
     amount = models.FloatField(default=None)
-    accepted = models.BooleanField(default=None)
+    accepted = models.BooleanField(default=False)
     outbid = models.BooleanField(default=False)

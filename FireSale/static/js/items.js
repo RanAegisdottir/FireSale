@@ -7,16 +7,50 @@ $(document).ready(function() {
             type: 'GET',
             success: function (resp) {
                 let newHTML = resp.data.map(d => {
+                    if (d.priceidea > d.heighestoffer){
+                        price = d.priceidea;
+                    }else {
+                        price = d.heighestoffer;
+                    }
                     return `<div class="product">
                             <a href="/shop/${ d.id }">
                             <img class="item-img" src="${ d.image }" />
-                            <h4>${ d.name }</h4>
-                            <p>$ ${ d.priceidea }</p>
+                            <h4>${ d.name }</h4>                           
+                            <p>$ ${price}</p>
                             </a>
                             </div>`
                 });
                 $('.products').html(newHTML.join(''));
                 $('#search-box').val('');
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        })
+    });
+    $('#answer-sort-dropdown-select-menu').on('change', function (e) {
+        console.log(this.value)
+        var value = this.value;
+        e.preventDefault()
+        $.ajax( {
+            url: '/shop?order=' + value,
+            type: 'GET',
+            success: function (resp) {
+                let newHTML = resp.data.map(d => {
+                    if (d.priceidea > d.heighestoffer){
+                        price = d.priceidea;
+                    }else {
+                        price = d.heighestoffer;
+                    }
+                    return `<div class="product">
+                            <a href="/shop/${ d.id }">
+                            <img class="item-img" src="${ d.image }" />
+                            <h4>${ d.name }</h4>
+                            <p>$ ${ price }</p>
+                            </a>
+                            </div>`
+                });
+                $('.products').html(newHTML.join(''));
             },
             error: function (xhr, status, error) {
                 console.error(error);

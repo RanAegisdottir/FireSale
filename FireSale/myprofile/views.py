@@ -4,8 +4,6 @@ from shop.models import Offers, ItemImage, Item
 from checkout.models import Order, Payments
 
 
-
-
 # Create your views here.
 def index(request):
     return render(request, 'myprofile/account.html', {
