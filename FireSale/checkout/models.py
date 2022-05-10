@@ -9,6 +9,7 @@ class Country(models.Model):
     country = CountryField(blank_label='(select country)', default=None)
 
 
+
 class Payments(models.Model):
     userID = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
     card_name = models.CharField(max_length=255, default=None)
