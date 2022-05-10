@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from myprofile.models import UserImage, Users
+from notification.models import Notifications
 from shop.models import Offers, ItemImage, Item
 from checkout.models import Order, Payments
 
@@ -62,3 +63,14 @@ def sold(request):
         'UserInfo': Users.objects.get(user_id=request.user.id)
     })
 
+
+def accept(request):
+    offer_id = request.GET.get('offer-id', '')
+    offer = Offers.objects.get(id=offer_id)
+    offer.accepted = True
+    offer.save()
+    offers = Offers.objects.filter(item_id=offer.item_id)
+    for x in offers:
+        notification = Notifications(offer_id=x.id, seller_id=request.user.id)
+        notification.save()
+    return redirect('my_items')

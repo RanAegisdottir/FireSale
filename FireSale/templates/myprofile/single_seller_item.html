@@ -15,7 +15,7 @@
                         {% if offer.accepted == False %}
                             <p class="offer_state_title green">Highest offer: <br>$ {{ Item.heighestoffer }}</p>
                             <div class="flex_break"></div>
-                            <button class="edit_btn offer_btn">ACCEPT</button>
+                            <a href="{% url 'accept' %}?offer-id={{ offer.id }}" class="checkout_link"> Accept </a>
                         {% else %}
                             <p class="offer_state_title yellow">Pending...<br>$ {{ offer.amount }}</p>
                             <div class="flex_break"></div>
