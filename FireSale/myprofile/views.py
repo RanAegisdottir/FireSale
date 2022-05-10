@@ -17,16 +17,21 @@ def index(request):
 
 def edit_profile(request):
     instance = get_object_or_404(Users, user=request.user)
+    user = Users.objects.get(user=request.user)
     if request.method == 'POST':
         form = EditProfileForm(data=request.POST)
         if form.is_valid():
-            fullname = form.cleaned_data.get("Fullname")
+            fullname = form.cleaned_data.get("fullname")
             bio = form.cleaned_data.get("bio")
-            user = Users(bio=bio, fullname=fullname)
+
+            user.fullname = fullname
+            user.bio = bio
 
             user.save()
-            user_image = UserImage(imgURL=request.POST['image'], user_id=request.user)
-            user_image.save()
+            user_img = UserImage.objects.get(user=request.user)
+            user_img.user_image = request.POST['image']
+            user_img.save()
+            return redirect('myprofile-index')
     else:
         form = EditProfileForm(instance=instance)
     return render(request, 'myprofile/edit_profile.html', {

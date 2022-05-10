@@ -5,7 +5,7 @@ from django.db import models
 class Users(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
     bio = models.CharField(max_length=300, default=None)
-    rating = models.IntegerField(default=None)
+    rating = models.IntegerField(default=None, blank=True)
     fullname = models.CharField(max_length=300, default='')
 
     def __str__(self):
