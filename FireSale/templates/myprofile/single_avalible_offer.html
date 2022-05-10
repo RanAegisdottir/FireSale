@@ -7,12 +7,12 @@
         {% if Offer.accepted %}
             <p class="offer_state_title green">Accepted<br>$ {{ Offer.amount }}</p>
             <div class="flex_break"></div>
-            <button class="edit_btn offer_btn">CHECKOUT</button>
+            <a href="{% url 'checkout-payment' %}?offer-id={{ Offer.id }}" class="checkout_link"> Checkout </a>
 
             {% elif not Offer.accepted and Offer.outbid %}
                 <p class="offer_state_title red">Outbid<br>$ {{ Offer.amount }}</p>
                 <div class="flex_break"></div>
-                <button class="edit_btn offer_btn orange">BID AGAIN</button>
+                <a href="/shop/{{ Offer.item.id }}" class="checkout_link"> BID AGAIN </a>
 
             {% elif not Offer.accepted and not Offer.outbid %}
                 <p class="offer_state_title yellow">Pending...<br>$ {{ Offer.amount }}</p>
