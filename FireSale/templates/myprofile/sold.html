@@ -5,6 +5,7 @@
         <div class="item_container">
             {% for Item in sold_products %}
                 {% include 'shop/single_item.html' with Item=Item %}
+{#                {% include 'myprofile/single_sold_item.html' with Item=Item %}#}
             {% endfor %}
         </div>
     </div>

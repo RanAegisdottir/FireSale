@@ -1,0 +1,10 @@
+<div class="sold_item_container">
+    <img class="offer_item_img" src="{{ Item.itemimage_set.first.imgURL }}" alt="{{ Item.name }} image" />
+    <div class="offer_info_container">
+        <h5 class="offer_item_title">{{ order.Offers.Item.name}}</h5>
+        <div class="offer_info_inner_container">
+            <p class="offer_state_title">Sold<br>$ {{ # }}</p>
+        </div>
+    </div>
+    <hr class="divider">
+</div>

@@ -49,7 +49,8 @@ def my_items(request):
         'my_items_products': Item.objects.filter(seller=request.user.id, available=True),
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id),
-        'UserInfo': Users.objects.get(user_id=request.user.id)
+        'UserInfo': Users.objects.get(user_id=request.user.id),
+        'Offers': Offers.objects.all()
     })
 
 
