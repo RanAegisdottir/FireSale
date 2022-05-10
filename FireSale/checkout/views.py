@@ -49,3 +49,16 @@ def confirm(request, payment_id):
     return render(request, 'checkout/confirm.html', {
         'payment': Payments.objects.get(id=payment_id),
         'Image': UserImage.objects.get(user_id=request.user.id)})
+
+
+
+def save(request):
+    payment_id = request.GET.get('payment-id', '')
+    payment = Payments.objects.get(id=payment_id)
+    order_id = request.GET.get('order-id', '')
+    order = Order.objects.get(id=order_id)
+    payment.confirmed = True
+    payment.save()
+    order.confirmed = True
+    order.save()
+    return render(request, 'checkout/save.html')

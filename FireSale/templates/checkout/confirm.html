@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
     <h2>Welcome to the confirmation page!</h2>
-    <h3 class="card_name">{{ order.payID.card_name | capfirst }}</h3>
-    <h3 class="card_name">{{ order.offerID.item.name | capfirst }}</h3>
+    <h4>Card Info</h4>
+    <p class="card_name">{{ order.payID.card_name | capfirst }}</p>
+    <p class="card_name">{{ order.payID.card_num | capfirst }}</p>
+    <p class="card_name">{{ order.payID.CVC | capfirst }}</p>
+    <p class="card_name">{{ order.payID.exdate | capfirst }}</p>
+
+    <h4>User Info</h4>
+    <p class="card_name">{{ order.payID.street | capfirst }}</p>
+    <p class="card_name">{{ order.payID.zip | capfirst }}</p>
+    <p class="card_name">{{ order.payID.city | capfirst }}</p>
+    <p class="card_name">{{ order.payID.country | capfirst }}</p>
+
+    <h4>Item</h4>
+    <p class="card_name">{{ order.offerID.item.name | capfirst }}</p>
+    <p class="card_name">{{ order.offerID.amount| capfirst }}</p>
+    <p class="card_name">{{ order.offerID.item.seller | capfirst }}</p>
+    <a href="{% url 'checkout-payment' %}?offer-id={{ order.offerID.id }}" class="checkout_link"> Back </a>
+    <a href="{% url 'save' %}?order-id={{ order.id }}&payment-id={{ order.payID.id }}" class="checkout_link"> Confirm </a>
 {% endblock %}
