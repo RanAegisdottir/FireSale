@@ -6,7 +6,9 @@
     <!--all products-->
     <div class="products">
         {% for Item in products %}
+            {% if Item.available %}
             {% include 'shop/single_item.html' with Item=Item %}
+            {% endif %}
         {% endfor %}
     </div>
     <!--search bar and filter by-->

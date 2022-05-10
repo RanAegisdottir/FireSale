@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="offer-low">
+    <h3 class="orange-text">Offer too low!</h3>
+    <a href="{% url 'item-details' id=product.id %}">go back</a>
+    </div>
+{% endblock %}
