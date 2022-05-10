@@ -16,7 +16,7 @@ def index(request):
 
 
 def edit_profile(request):
-    instance = get_object_or_404(Users, user=request.user), get_object_or_404(UserImage, )
+    instance = get_object_or_404(Users, user=request.user)
     if request.method == 'POST':
         form = EditProfileForm(data=request.POST)
         if form.is_valid():
