@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from myprofile.forms.edit_profile_form import EditProfileForm
 from myprofile.models import UserImage, Users
+from notification.models import Notifications
 from shop.models import Offers, ItemImage, Item
 from checkout.models import Order, Payments
-
-
 
 
 # Create your views here.
@@ -16,7 +16,27 @@ def index(request):
 
 
 def edit_profile(request):
+    instance = get_object_or_404(Users, user=request.user)
+    user = Users.objects.get(user=request.user)
+    if request.method == 'POST':
+        form = EditProfileForm(data=request.POST)
+        if form.is_valid():
+            fullname = form.cleaned_data.get("fullname")
+            bio = form.cleaned_data.get("bio")
+
+            user.fullname = fullname
+            user.bio = bio
+
+            user.save()
+            user_img = UserImage.objects.get(user=request.user)
+            user_img.user_image = request.POST['image']
+            user_img.save()
+            return redirect('myprofile-index')
+    else:
+        form = EditProfileForm(instance=instance)
     return render(request, 'myprofile/edit_profile.html', {
+        'form': form,
+        'id': id,
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id),
         'UserInfo': Users.objects.get(user_id=request.user.id)
@@ -63,3 +83,14 @@ def sold(request):
         'UserInfo': Users.objects.get(user_id=request.user.id)
     })
 
+
+def accept(request):
+    offer_id = request.GET.get('offer-id', '')
+    offer = Offers.objects.get(id=offer_id)
+    offer.accepted = True
+    offer.save()
+    offers = Offers.objects.filter(item_id=offer.item_id)
+    for x in offers:
+        notification = Notifications(offer_id=x.id, seller_id=request.user.id)
+        notification.save()
+    return redirect('my_items')

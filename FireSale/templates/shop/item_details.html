@@ -1,42 +1,46 @@
 {% extends 'base.html' %}
 {% block content %}
 <body>
+    <!--all images connected to certain object-->
     <div class="float-container">
         {% for item_img in Item.itemimage_set.all %}
             <img src="{{ item_img.imgURL }}" class="item-img"/>
         {% endfor %}
     </div>
+    <!--all text-->
     <div class="child-container">
         <div class="detail-title-price">
             <h1>{{ Item.name }}</h1>
             <p>Price from seller: $ {{ Item.priceidea }}</p>
+            <p>Highest offer: $ {{ Item.heighestoffer }}</p>
         </div>
-        <div class="flex-break">
+        <div class="side-text">
             <p class="orange-text">Seller:</p>
             <p class="black-text"> {{ Item.seller.username}}</p>
         </div>
-        <div class="flex-break">
+        <div class="side-text">
             <p class="orange-text">Condition:</p>
             <p class="black-text"> {{ Item.condition }}</p>
         </div>
-        <div class="flex-break">
+        <div class="side-text">
             <p class="orange-text">Description:</p>
         </div>
-        <div class="flex-break">
+        <div class="side-text">
         <p class="black-text">{{ Item.description }}</p>
         </div>
+        <!--place an offer-->
         <div class="detail-offer">
             <p>Your offer: </p>
-            <form>
-                <input type="text" placeholder="price...">
+            <form id="offer" action="{% url 'item-details' id=Item.id %}" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit">Place offer</button>
             </form>
-            <p> $</p>
-            <button>Place offer</button>
         </div>
         <!--ef við viljum hafa það þannig að við förum inn á seller profile í item (b-krafa)-->
         {#<a href="{% url "myprofile-index" id=Item.user.id %}"><p>Seller: {{ Item.seller.name }}</p></a>#}
     </div>
-    <!--similar items ATH virkar ekki-->
+    <!--similar items-->
     <div class="detail-similar">
         <h2>Similar items</h2>
         {% for Item in products %}
