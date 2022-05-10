@@ -1,26 +1,31 @@
 {% extends 'base-profile.html' %}
 {% block sub_content %}
-    <div class="profile_container">
+    <div class="offer_profile_container">
         <h1 class="profile_title">My Offers</h1>
         <div class="item_container">
-            {% for offer in Offers %}
-{#                {% if offer.amount = Item.higestoffer (Item.available == true) %}#}
+            {% for Offer in Offers %}
+                {% if Offer.item.available %}
                     {% include 'myprofile/single_avalible_offer.html' %}
-{#                {% endif %}#}
+                {% endif %}
             {% endfor %}
         </div>
     </div>
     <hr class="divider">
-    <div class="profile_container">
+    <div class="offer_profile_container">
         <h1 class="profile_title">Declined Offers</h1>
         <div class="item_container">
-            {% for order in Orders %}
+            {% for Offer in Offers %}
+                {% if  not Offer.accepted and not Offer.item.availible %}
+                    {% include 'myprofile/single_declined_offer.html' %}
+                {% endif %}
+            {% endfor %}
+{% comment %}            {% for order in Orders %}
                 {% if order.Offers.Item.available == false %}
                     {% if order.Payments.userID != Users.id %}
                         {% include 'myprofile/single_declined_offer.html' %}
                     {% endif %}
                 {% endif %}
-            {% endfor %}
+            {% endfor %}{% endcomment %}
         </div>
     </div>
 {% endblock %}
