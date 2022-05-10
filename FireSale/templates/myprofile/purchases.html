@@ -3,7 +3,11 @@
     <div class="profile_container">
         <h1 class="profile_title">Purchases</h1>
         <div class="item_container">
-
+            {% for Offer in Offers %}
+                {% if not Offer.item.available %}
+                    {% include 'myprofile/single_purchase.html' %}
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
