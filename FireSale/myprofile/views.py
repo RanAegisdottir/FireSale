@@ -1,10 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from myprofile.forms.edit_profile_form import EditProfileForm
 from myprofile.models import UserImage, Users
 from notification.models import Notifications
 from shop.models import Offers, ItemImage, Item
 from checkout.models import Order, Payments
-
-
 
 
 # Create your views here.
@@ -17,7 +16,22 @@ def index(request):
 
 
 def edit_profile(request):
+    instance = get_object_or_404(Users, user=request.user), get_object_or_404(UserImage, )
+    if request.method == 'POST':
+        form = EditProfileForm(data=request.POST)
+        if form.is_valid():
+            fullname = form.cleaned_data.get("Fullname")
+            bio = form.cleaned_data.get("bio")
+            user = Users(bio=bio, fullname=fullname)
+
+            user.save()
+            user_image = UserImage(imgURL=request.POST['image'], user_id=request.user)
+            user_image.save()
+    else:
+        form = EditProfileForm(instance=instance)
     return render(request, 'myprofile/edit_profile.html', {
+        'form': form,
+        'id': id,
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id),
         'UserInfo': Users.objects.get(user_id=request.user.id)

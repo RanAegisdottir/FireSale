@@ -8,7 +8,7 @@
 
             </div>
             <div class="profile_info_container">
-                <h3 class="user_name">{{ Users.username | capfirst }}</h3>
+                <h3 class="user_name">{{ UserInfo.Fullname | capfirst }}</h3>
                 {% if UserInfo.rating == 0 %}
                     <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png" >
                 {% endif %}
