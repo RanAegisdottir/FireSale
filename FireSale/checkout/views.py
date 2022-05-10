@@ -62,3 +62,8 @@ def save(request):
     order.confirmed = True
     order.save()
     return render(request, 'checkout/save.html')
+
+
+def review(request):
+    return
+

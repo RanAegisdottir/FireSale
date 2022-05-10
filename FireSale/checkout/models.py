@@ -32,13 +32,10 @@ class Order(models.Model):
 
 
 class Reviews(models.Model):
-    text = models.CharField(max_length=300, default="")
+    seller = models.ForeignKey(Users, on_delete=models.CASCADE, default=None)
     rating = models.IntegerField(default=0)
     order = models.ForeignKey(Order, on_delete=models.CASCADE, default="")
 
 
 class Stars(models.Model):
-    star_img = models.CharField(max_length=9999, default="")
-    # á þetta að vera int
     star_num = models.IntegerField(default=0)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default="")
