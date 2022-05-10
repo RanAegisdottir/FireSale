@@ -2,13 +2,14 @@
     <img class="offer_item_img" src="{{ Offer.item.itemimage_set.first.imgURL }}" alt="{{ Offer.item.name }} image" />
     <div class="offer_info_container">
         <h5 class="offer_item_title">{{ Offer.item.name | capfirst}}</h5>
-        <button class="cancel_offer_btn" >X</button>
         <div class="flex_break"></div>
-        <p class="offer_state_title red">Confirmed<br>$ {{ Offer.amount }}</p>
+        <p class="offer_state_title green">Confirmed<br>$ {{ Offer.amount }}</p>
         <div class="flex_break"></div>
         {% if Offer.order_set.first.reviews_set.count == 0 %}
-        <button class="edit_btn offer_btn">GIVE REVIEW</button>
+            <button class="edit_btn purchase_btn">GIVE REVIEW</button>
+        {% else %}
+            <p class="offer_state_title green">Review sent</p>
         {% endif %}
     </div>
-    <hr class="divider">
+    <hr class="offer_divider">
 </div>
