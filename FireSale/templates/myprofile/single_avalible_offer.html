@@ -4,20 +4,20 @@
         <h5 class="offer_item_title">{{ Offer.item.name | capfirst}}</h5>
         <button class="cancel_offer_btn" >X</button>
         <div class="flex_break"></div>
-            {% if Offer.accepted %}
-                <p class="offer_state_title green">Accepted<br>$ {{ Offer.amount }}</p>
+        {% if Offer.accepted %}
+            <p class="offer_state_title green">Accepted<br>$ {{ Offer.amount }}</p>
+            <div class="flex_break"></div>
+            <button class="edit_btn offer_btn">CHECKOUT</button>
+
+            {% elif not Offer.accepted and Offer.outbid %}
+                <p class="offer_state_title red">Outbid<br>$ {{ Offer.amount }}</p>
                 <div class="flex_break"></div>
-                <button class="edit_btn offer_btn">CHECKOUT</button>
+                <button class="edit_btn offer_btn orange">BID AGAIN</button>
 
-                {% elif not Offer.accepted and Offer.outbid %}
-                    <p class="offer_state_title red">Outbid<br>$ {{ Offer.amount }}</p>
-                    <div class="flex_break"></div>
-                    <button class="edit_btn offer_btn orange">BID AGAIN</button>
-
-                {% elif not Offer.accepted and not Offer.outbid %}
-                    <p class="offer_state_title yellow">Pending...<br>$ {{ Offer.amount }}</p>
-                    <div class="flex_break"></div>
-            {% endif %}
+            {% elif not Offer.accepted and not Offer.outbid %}
+                <p class="offer_state_title yellow">Pending...<br>$ {{ Offer.amount }}</p>
+                <div class="flex_break"></div>
+        {% endif %}
     </div>
     <hr class="offer_divider">
 </div>

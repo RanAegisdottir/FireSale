@@ -19,13 +19,6 @@
                     {% include 'myprofile/single_declined_offer.html' %}
                 {% endif %}
             {% endfor %}
-{% comment %}            {% for order in Orders %}
-                {% if order.Offers.Item.available == false %}
-                    {% if order.Payments.userID != Users.id %}
-                        {% include 'myprofile/single_declined_offer.html' %}
-                    {% endif %}
-                {% endif %}
-            {% endfor %}{% endcomment %}
         </div>
     </div>
 {% endblock %}
