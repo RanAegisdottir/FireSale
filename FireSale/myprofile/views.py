@@ -38,7 +38,8 @@ def purchases(request):
         # 'same_user_in_offers': Offers.objects.filter(buyer=purchased_by, Item=item),
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id),
-        'UserInfo': Users.objects.get(user_id=request.user.id)
+        'UserInfo': Users.objects.get(user_id=request.user.id),
+        'Offers': Offers.objects.filter(buyer_id=request.user.id, accepted=True)
     })
 
 
@@ -47,7 +48,8 @@ def my_items(request):
         'my_items_products': Item.objects.filter(seller=request.user.id, available=True),
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id),
-        'UserInfo': Users.objects.get(user_id=request.user.id)
+        'UserInfo': Users.objects.get(user_id=request.user.id),
+        'Offers': Offers.objects.all()
     })
 
 

@@ -208,11 +208,19 @@ h5.profile_sub_title{
 
 /* ------------------ my offers ----------------- */
 
+.offer_profile_container, .item_profile_container{
+    margin-top: 25px;
+    padding: 70px 80px;
+}
+
+
 .item_container{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: space-between;
     margin-top: 25px;
+    width:100%
 }
 
 .offer_divider{
@@ -221,26 +229,23 @@ h5.profile_sub_title{
     margin-bottom: 40px;
 }
 
-.available_offer_container{
+.available_offer_container, .seller_item_container, .declined_offer_container, purchase_container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 40%;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 48%;
 }
 
 .offer_item_img{
-    width: 150px;
-    height: 150px;
+    width: 35%;
+    min-height: 35%;
     object-fit: cover;
-    margin-right: 25px;
+    margin-right: 2%;
 }
 
 .offer_item_title{
     color: #f97224;
     margin-top: 3px;
-    margin-right: 25px;
 }
 
 .cancel_offer_btn{
@@ -266,7 +271,7 @@ h5.profile_sub_title{
 }
 
 .edit_btn.offer_btn{
-    margin-left: 50%;
+    /*margin-left: 50%;*/
 }
 
 .edit_btn.orange{

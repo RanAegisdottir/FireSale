@@ -27,10 +27,13 @@
     color: #F97D24;
     height: 40px;
 }
+
+
 #login_info {
     margin: 30px;
     align: left
 }
+
 
 #register_input {
     margin-left: 34%;
@@ -38,14 +41,25 @@
     color: #FF903F;
 }
 
-#sign_up_text {
-    margin: 10px;
-    margin-left: 38%;
+.errorlist > li {
     color: red;
 }
 
+label {
+    font-weight: bolder;
+}
+
+#sign_up_text {
+    margin: 10px;
+    margin-left: 38%;
+    color: #f97224;
+}
+
+
 
 .signup_button{
+    display: flex;
+    flex-direction: column;
     border: 2px solid #06C421;
     color: #06C421;
     background-color: transparent;

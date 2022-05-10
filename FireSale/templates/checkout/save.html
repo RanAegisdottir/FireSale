@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Welcome to the confirm page!</h2>
+    <h2>Your order has been confirmed!</h2>
+    <a href="{% url 'myprofile-index' %}" class="return_link"> Return </a>
 {% endblock %}
