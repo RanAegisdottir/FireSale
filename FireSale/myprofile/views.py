@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from myprofile.forms.edit_profile_form import EditProfileForm
+from myprofile.forms.review_form import ReviewForm
 from myprofile.models import UserImage, Users
 from notification.models import Notifications
 from shop.models import Offers, ItemImage, Item
-from checkout.models import Order, Payments
+from checkout.models import Order, Payments, Reviews
 
 
 # Create your views here.
@@ -94,3 +95,36 @@ def accept(request):
         notification = Notifications(offer_id=x.id, seller_id=request.user.id)
         notification.save()
     return redirect('my_items')
+
+
+def ItemReview(request):
+    if request.method == 'POST':
+        form = ReviewForm(data=request.POST)
+        if form.is_valid():
+            rating = form.cleaned_data.get('rating')
+            offer_id = request.GET.get('offer-id', '')
+            order = Order.objects.get(offerID=offer_id)
+            item_review = Reviews(order_id=order.id, rating=rating, seller_id=order.offerID.item.seller.id)
+            item_review.save()
+
+            reviews = Reviews.objects.filter(seller_id=order.offerID.item.seller.id)
+            total = 0
+            count = 0
+            for x in reviews:
+                total += x.rating.star_num
+                count += 1
+
+            avg_rating = total // count
+            user = Users.objects.get(user_id=order.offerID.item.seller.id)
+            user.rating = avg_rating
+            user.save()
+
+            return redirect('myprofile-index')
+    else:
+        form = ReviewForm()
+        offer_id = request.GET.get('offer-id', '')
+    return render(request, 'myprofile/review.html', {
+        'form': form,
+        'offer_id': offer_id,
+        'Image': UserImage.objects.get(user_id=request.user.id)
+    })

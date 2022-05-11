@@ -6,7 +6,7 @@
         <p class="offer_state_title green">Confirmed<br>$ {{ Offer.amount }}</p>
         <div class="flex_break"></div>
         {% if Offer.order_set.first.reviews_set.count == 0 %}
-            <a href="{% url 'review' %}?offer-id={{ Offer.id }}" class="edit_btn purchase_btn"> Give Review </a>
+            <a href="{% url 'item_review' %}?offer-id={{ Offer.id }}" class="edit_btn purchase_btn"> Give Review </a>
         {% else %}
             <p class="offer_state_title green">Review sent</p>
         {% endif %}

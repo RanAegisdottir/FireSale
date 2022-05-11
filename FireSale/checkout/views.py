@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from checkout.models import Payments, Order
 from checkout.forms.checkout_form import CheckoutForm
 from myprofile.models import UserImage, Users
-from shop.models import Offers
+from shop.models import Offers, Item
 
 
 def index(request):
@@ -61,9 +61,8 @@ def save(request):
     payment.save()
     order.confirmed = True
     order.save()
+    item = Item.objects.get(id=order.offerID.item.id)
+    item.available = False
+    item.save()
     return render(request, 'checkout/save.html')
-
-
-def review(request):
-    return
 
