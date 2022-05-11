@@ -15,7 +15,7 @@
         <h1 class="profile_title">Declined Offers</h1>
         <div class="item_container">
             {% for Offer in Offers %}
-                {% if  not Offer.accepted and not Offer.item.availible %}
+                {% if not Offer.accepted and not Offer.item.available %}
                     {% include 'myprofile/single_declined_offer.html' %}
                 {% endif %}
             {% endfor %}
