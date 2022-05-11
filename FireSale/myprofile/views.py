@@ -97,7 +97,7 @@ def accept(request):
     return redirect('my_items')
 
 
-def ItemReview(request):
+def review(request):
     if request.method == 'POST':
         form = ReviewForm(data=request.POST)
         if form.is_valid():

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <h2 id="checkout_header">Review</h2>
-    <form class="form form-horizontal" action="{% url 'item_review' %}?offer-id={{ offer_id }}" method="post">
+    <form class="form form-horizontal" action="{% url 'review' %}?offer-id={{ offer_id }}" method="post">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Confirm" class="btn btn-primary pull-right create_button" style="clear:both; margin: 10px 0" />
