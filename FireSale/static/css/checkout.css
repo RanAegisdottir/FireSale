@@ -50,3 +50,25 @@
     border: 0.5px solid black;
 
 }
+
+
+.checkout_input_form{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: 0% 38%;
+    color: #f97224;
+    align-items: center;
+}
+
+.country-select-flag{
+    height: 5px;
+    break-before: right;
+}
+
+#checkout_header{
+    color: #f97224;
+    display: flex;
+    flex-direction: column;
+    margin: 5% 42%;
+}
