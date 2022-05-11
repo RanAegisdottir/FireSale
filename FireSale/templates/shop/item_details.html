@@ -11,8 +11,10 @@
     <div class="child-container">
         <div class="detail-title-price">
             <h1>{{ Item.name }}</h1>
-            <p>Price from seller: $ {{ Item.priceidea }}</p>
-            <p>Highest offer: $ {{ Item.heighestoffer }}</p>
+            <div class="prices">
+                <p>Price from seller: {{ Item.priceidea }} $</p>
+                <p>Highest offer: {{ Item.heighestoffer }} $</p>
+            </div>
         </div>
         <div class="side-text">
             <p class="orange-text">Seller:</p>
@@ -30,11 +32,10 @@
         </div>
         <!--place an offer-->
         <div class="detail-offer">
-            <p>Your offer: </p>
             <form id="offer" action="{% url 'item-details' id=Item.id %}" method="post">
                 {% csrf_token %}
                 {{ form }}
-                <button type="submit">Place offer</button>
+                <button type="submit" class="btn offer_button">Place offer</button>
             </form>
         </div>
         <!--ef við viljum hafa það þannig að við förum inn á seller profile í item (b-krafa)-->

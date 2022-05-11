@@ -36,8 +36,11 @@
 
 
 #register_input {
-    margin-left: 34%;
-    margin-right: 26%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    margin-left: 40%;
+    margin-right: 40%;
     color: #FF903F;
 }
 

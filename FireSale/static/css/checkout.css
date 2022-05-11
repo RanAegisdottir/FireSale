@@ -19,6 +19,14 @@
     padding: 15px 25px;
 }
 
+.order-confirm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f97224;
+    padding: 50px 50px 500px 50px;
+}
+
 .confirm_btn_container{
     margin-top: 25px;
 }

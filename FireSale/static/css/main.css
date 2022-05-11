@@ -86,15 +86,36 @@ a.nav-links:hover {
 }
 
 .side-text{
-    margin-top: 20px;
     display: flex;
     flex-direction: row;
 
 }
 
+.offer_button {
+     display: flex inline;
+     border: 2px solid #f97224;
+     color: #f97224;
+     background-color: white;
+    clear: both;
+}
+
+
+ .offer_button:hover {
+     color: white;
+     clear: both;
+     background-color: #f97224;
+ }
+
 .detail-offer {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.prices {
+    display: flex;
+    flex-direction: column;
 }
 
 .detail-similar {
