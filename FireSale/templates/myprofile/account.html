@@ -37,55 +37,36 @@
 
     <div class="profile_review_container" id="review_section1">
         <h1 class="profile_title">Reviews</h1>
-        <h5 class="profile_sub_title">(? Reviews)</h5>
-{#    -------------------- Dummy data sem þarf að breyta ---------------------------          #}
-        <div class="review_info_container">
-            <h3 class="reviewer_name">Amber Heard</h3>
-            <div class="flex_break"></div>
-            <h5 class="review_sub_title">Item: </h5>
-            <p>Pink Coffee Table</p>
-            <div class="flex_break"></div>
-            <h5 class="review_sub_title">Rating:</h5>
-            <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png">
-            <div class="flex_break"></div>
-            <p class="review_text">
-                I love this table! I have wanted one since I was 10 years old. My dream has come true,
-                the seller was a bit iffy but came through in the end.
-            </p>
-        </div>
-        <hr class="review_divider">
 
         <div class="review_info_container">
-            <h3 class="reviewer_name">Daði Már</h3>
-            <div class="flex_break"></div>
-            <h5 class="review_sub_title">Item: </h5>
-            <p>Plast Sokkar</p>
-            <div class="flex_break"></div>
-            <h5 class="review_sub_title">Rating:</h5>
-            <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png">
-            <div class="flex_break"></div>
-            <p class="review_text">
-                Frekar svekktur, það var gat í sokkunm þegar ég fékk þær og tók mánuð að fá þá.
-            </p>
+            {% for review in Reviews %}
+                <h3 class="reviewer_name">{{ review.order.offerID.buyer.username | capfirst}}</h3>
+                <div class="flex_break"></div>
+                <h5 class="review_sub_title">Item: </h5>
+                <p>{{ review.order.offerID.item.name }}</p>
+                <div class="flex_break"></div>
+                <h5 class="review_sub_title">Rating:</h5>
+                {% if review.rating.star_num == 0 %}
+                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png">
+                {% endif %}
+                {% if review.rating.star_num == 1 %}
+                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 1.png" >
+                {% endif %}
+                {% if review.rating.star_num == 2 %}
+                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire stars 2.png" >
+                {% endif %}
+                {% if review.rating.star_num == 3 %}
+                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 3.png" >
+                {% endif %}
+                {% if review.rating.star_num == 4 %}
+                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 4.png" >
+                {% endif %}
+                {% if review.rating.star_num == 5 %}
+                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 5.png" >
+                {% endif %}
+                <div class="flex_break"></div>
+                <hr class="review_divider">
+            {% endfor %}
         </div>
-        <hr class="review_divider">
-
-        <div class="review_info_container">
-            <h3 class="reviewer_name">Silvester Stalone</h3>
-            <div class="flex_break"></div>
-            <h5 class="review_sub_title">Item: </h5>
-            <p>Iphone Super Max 22</p>
-            <div class="flex_break"></div>
-            <h5 class="review_sub_title">Rating:</h5>
-            <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png">
-            <div class="flex_break"></div>
-            <p class="review_text">
-                Gekk mjög vel að kaupa og sækja, síminn var frábær og alveg eins og stóð í lýsingunni,
-                allt í top standi. Gef 5 stjörnur og myndi klárlega mæla með seljanda. Takk fyrir viðskiptin!
-            </p>
-        </div>
-        <hr class="review_divider">
-
-    </div>
 {#         -----------------------------        #}
 {% endblock %}

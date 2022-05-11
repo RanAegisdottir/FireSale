@@ -9,10 +9,12 @@ from checkout.models import Order, Payments, Reviews
 
 # Create your views here.
 def index(request):
+    user_reviews = Reviews.objects.filter(seller_id=request.user.id)
     return render(request, 'myprofile/account.html', {
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id),
-        'UserInfo': Users.objects.get(user_id=request.user.id)
+        'UserInfo': Users.objects.get(user_id=request.user.id),
+        'Reviews': user_reviews
     })
 
 
