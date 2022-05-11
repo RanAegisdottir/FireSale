@@ -5,8 +5,6 @@ from shop.models import Offers
 from django_countries.fields import CountryField
 
 
-class Country(models.Model):
-    country = CountryField(blank_label='(select country)', default=None)
 
 
 
@@ -17,7 +15,7 @@ class Payments(models.Model):
     exdate = models.DateField(default=None)
     CVC = models.IntegerField(default=None)
     companyname = models.CharField(max_length=255, default=None, blank=True)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, default=None)
+    country = CountryField(blank_label='(select country)', default=None)
     street = models.CharField(max_length=255, default=None)
     zip = models.IntegerField(default=None)
     city = models.CharField(max_length=255, default=None)

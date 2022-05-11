@@ -37,6 +37,7 @@ def edit_profile(request):
             return redirect('myprofile-index')
     else:
         form = EditProfileForm(instance=instance)
+        form.fields['image'].initial = UserImage.objects.filter(user=request.user).first()
     return render(request, 'myprofile/edit_profile.html', {
         'form': form,
         'id': id,

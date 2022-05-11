@@ -33,7 +33,8 @@ def checkout_payment(request):
             order.save()
             return render(request, 'checkout/confirm.html', {
                 'order': Order.objects.get(id=order.id),
-                'Image': UserImage.objects.get(user_id=request.user.id)})
+                'Image': UserImage.objects.get(user_id=request.user.id),
+                'UserInfo': Users.objects.get(user_id=request.user.id)})
 
     else:
         form = CheckoutForm()
