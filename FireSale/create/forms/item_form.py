@@ -4,10 +4,10 @@ from django import forms
 
 
 class ItemCreateForm(ModelForm):
-    image = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    first_image = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    second_image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    third_image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    fourth_image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = Item
