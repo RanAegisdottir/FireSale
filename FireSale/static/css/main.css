@@ -62,7 +62,6 @@ a.nav-links:hover {
     color: #f97224;
     float: left;
     width: 50%;
-    flex-direction: column;
     object-fit: contain;
 }
 
@@ -78,7 +77,6 @@ a.nav-links:hover {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
-    width: 100px;
     height: 150px;
 }
 

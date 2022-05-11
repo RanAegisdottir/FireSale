@@ -3,17 +3,14 @@
 <body>
     <!--all images connected to certain object-->
     <div class="float-container">
+        <div class="first-image-detail">
+            <img src="{{ Item.itemimage_set.first.imgURL }}"/>
+        </div>
+        <div class="rest-image-detail">
         {% for item_img in Item.itemimage_set.all %}
-            {% if Item.itemimage_set.first == item_img %}
-                <div class="first-image-detail">
-                    <img src="{{ item_img.imgURL }}"/>
-                </div>
-            {% else %}
-                <div class="rest-image-detail">
-                    <img src="{{ item_img.imgURL }}"/>
-                </div>
-            {% endif %}
+            <img src="{{ item_img.imgURL }}"/>
         {% endfor %}
+        </div>
     </div>
     <!--all text-->
     <div class="child-container">
