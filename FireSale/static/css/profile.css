@@ -184,6 +184,7 @@ h5.profile_sub_title{
     color: #06C421;
     background-color: transparent;
     padding: 8px 30px;
+    max-height: 45px;
 }
 
 .edit_btn:hover{
