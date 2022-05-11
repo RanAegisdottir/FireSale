@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
-    <h2>Your order has been confirmed!</h2>
-    <a href="{% url 'myprofile-index' %}" class="return_link"> Return </a>
+    <div class="order-confirm">
+        <h3>Your order has been confirmed!</h3>
+        <img src="{% static 'images/check mark.png' %}" height="210" width="200"/>
+        <a href="{% url 'myprofile-index' %}" class="return_link"> Return </a>
+    </div>
 {% endblock %}

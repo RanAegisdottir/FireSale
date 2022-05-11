@@ -5,6 +5,9 @@ from django import forms
 
 class ItemCreateForm(ModelForm):
     image = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = Item
@@ -14,5 +17,4 @@ class ItemCreateForm(ModelForm):
             'description': widgets.TextInput(attrs={'class': 'form-control'}),
             'condition': widgets.Select(attrs={'class': 'form-control'}),
             'priceidea': widgets.NumberInput(attrs={'class': 'form-control'})
-            # 'available': widgets.CheckboxInput(attrs={'class': 'checkbox'})
         }
