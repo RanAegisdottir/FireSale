@@ -4,5 +4,5 @@
         <h5 class="offer_amaount">{{ notif.offer.amount }}$</h5>
         <p id="item_accepted_text"> Your offer for {{ notif.offer.item.name }} has been declined!</p>
 
-        <p > Seller: {{ notif.seller }}</p>
+        <p > Seller: {{ notif.seller | capfirst}}</p>
 </div>
