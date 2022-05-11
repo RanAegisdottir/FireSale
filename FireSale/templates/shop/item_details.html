@@ -4,7 +4,15 @@
     <!--all images connected to certain object-->
     <div class="float-container">
         {% for item_img in Item.itemimage_set.all %}
-            <img src="{{ item_img.imgURL }}"/>
+            {% if Item.itemimage_set.first == item_img %}
+                <div class="first-image-detail">
+                    <img src="{{ item_img.imgURL }}"/>
+                </div>
+            {% else %}
+                <div class="rest-image-detail">
+                    <img src="{{ item_img.imgURL }}"/>
+                </div>
+            {% endif %}
         {% endfor %}
     </div>
     <!--all text-->

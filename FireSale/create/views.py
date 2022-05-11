@@ -20,10 +20,10 @@ def create_item(request):
                         condition=condition, priceidea=priceidea, seller=request.user)
             item.save()
             first_item_image = ItemImage(imgURL=request.POST['first_image'], item=item)
+            first_item_image.save()
             second_item_image = ItemImage(imgURL=request.POST['second_image'], item=item)
             third_item_image = ItemImage(imgURL=request.POST['third_image'], item=item)
             fourth_item_image = ItemImage(imgURL=request.POST['fourth_image'], item=item)
-            first_item_image.save()
             if second_item_image != '':
                 second_item_image.save()
             if third_item_image != '':
