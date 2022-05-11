@@ -1,0 +1,44 @@
+
+.checkout_confirmed_container{
+    margin-top: 25px;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.checkout_confirmed_title{
+    margin-bottom: 40px;
+}
+
+.confirm_info_container{
+    min-width: 20%;
+    margin: 15px;
+    border: 2px solid #f97224;
+    padding: 15px 25px;
+}
+
+.confirm_btn_container{
+    margin-top: 25px;
+}
+
+.checkout_btn{
+    border: 2px solid #06C421;
+    color: #06C421;
+    background-color: white;
+    padding: 10px 45px;
+    margin: 10px;
+}
+
+.checkout_btn:hover{
+    color: white;
+    background-color: #06C421;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.confirm_divider{
+    width: 100%;
+    border: 0.5px solid black;
+
+}
