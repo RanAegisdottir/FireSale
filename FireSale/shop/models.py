@@ -24,7 +24,7 @@ class Item(models.Model):
 
 
 class ItemImage(models.Model):
-    imgURL = models.CharField(max_length=9999, default=None)
+    imgURL = models.CharField(max_length=50000, default=None)
     item = models.ForeignKey(Item, on_delete=models.CASCADE, default=None)
 
 

@@ -13,7 +13,7 @@ class Users(models.Model):
 
 
 class UserImage(models.Model):
-    user_image = models.CharField(max_length=9999, default=None)
+    user_image = models.CharField(max_length=50000, default=None)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
