@@ -63,6 +63,7 @@ a.nav-links:hover {
     color: #f97224;
     float: left;
     width: 50%;
+    object-fit: contain;
 }
 .float-container img {
     padding-top: 20px;
