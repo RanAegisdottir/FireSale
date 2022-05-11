@@ -30,12 +30,16 @@ class Order(models.Model):
     payID = models.ForeignKey(Payments, on_delete=models.CASCADE, default="")
     confirmed = models.BooleanField(default=False)
 
+class Stars(models.Model):
+    star_num = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.star_num)
+
 
 class Reviews(models.Model):
-    seller = models.ForeignKey(Users, on_delete=models.CASCADE, default=None)
-    rating = models.IntegerField(default=0)
+    seller = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
+    rating = models.ForeignKey(Stars, on_delete=models.CASCADE, default=None)
     order = models.ForeignKey(Order, on_delete=models.CASCADE, default="")
 
 
-class Stars(models.Model):
-    star_num = models.IntegerField(default=0)
