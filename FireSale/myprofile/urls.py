@@ -11,6 +11,7 @@ urlpatterns = [
     path('sold/', views.sold, name='sold'),
     path('accept/', views.accept, name='accept'),
     # path('review/', views.review, name='review')
+
 ]
 
 
