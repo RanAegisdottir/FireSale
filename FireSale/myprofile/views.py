@@ -126,5 +126,6 @@ def review(request):
     return render(request, 'myprofile/review.html', {
         'form': form,
         'offer_id': offer_id,
-        'Image': UserImage.objects.get(user_id=request.user.id)
+        'Image': UserImage.objects.get(user_id=request.user.id),
+        'UserInfo': Users.objects.get(user_id=request.user.id)
     })

@@ -48,7 +48,8 @@ def checkout_payment(request):
 def confirm(request, payment_id):
     return render(request, 'checkout/confirm.html', {
         'payment': Payments.objects.get(id=payment_id),
-        'Image': UserImage.objects.get(user_id=request.user.id)})
+        'Image': UserImage.objects.get(user_id=request.user.id),
+        'UserInfo': Users.objects.get(user_id=request.user.id)})
 
 
 
@@ -64,5 +65,7 @@ def save(request):
     item = Item.objects.get(id=order.offerID.item.id)
     item.available = False
     item.save()
-    return render(request, 'checkout/save.html')
+    return render(request, 'checkout/save.html', {
+        'Image': UserImage.objects.get(user_id=request.user.id),
+        'UserInfo': Users.objects.get(user_id=request.user.id)})
 
