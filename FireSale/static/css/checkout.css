@@ -62,8 +62,7 @@
 }
 
 .country-select-flag{
-    height: 5px;
-    break-before: right;
+    display: none;
 }
 
 #checkout_header{
