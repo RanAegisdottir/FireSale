@@ -73,13 +73,13 @@ a.nav-links:hover {
     width: 60%;
 }
 
-/*aðal myndin í item details*/
+/*main photo in item details*/
 .first-image-detail img {
     object-fit: contain;
     width: 150%;
 }
 
-/*myndir fyrir neðan aðal mynd í item details*/
+/*pictures below main photo in item details*/
 .rest-image-detail {
     display: flex;
     flex-direction: row;
@@ -87,7 +87,7 @@ a.nav-links:hover {
     height: 150px;
 }
 
-/*texti með upplýsingum í item detail*/
+/*the div around all text in item detail*/
 .child-container {
     margin-top: 40px;
     color: #f97224;
@@ -135,6 +135,7 @@ a.nav-links:hover {
     margin-top: 50px;
 }
 
+/*similar items in item details*/
 .detail-similar {
     clear: both;
     color: #f97224;
@@ -142,7 +143,7 @@ a.nav-links:hover {
 }
 
 
-/*öll items í shop síðunni*/
+/*all items in shop*/
 .product {
     width: 33%;
     text-align: center;
@@ -151,7 +152,6 @@ a.nav-links:hover {
     justify-content: flex-start;
     float: left;
 }
-
 .products {
     margin-top: 30px;
     width: 80%;
@@ -160,19 +160,16 @@ a.nav-links:hover {
     flex-direction: row;
     flex-wrap: wrap;
 }
-
 .product h4 {
     color: #f97224;
     float: left;
     width: 100%;
 }
-
 .product p {
     float: left;
     color: #F9C724;
     width: 100%;
 }
-
 .product img {
     padding-top: 20px;
     width: 250px;
@@ -180,6 +177,7 @@ a.nav-links:hover {
     object-fit: contain;
 }
 
+/*filter bar in shop*/
 .search-filter {
     margin-top: 60px;
     width: 20%;
@@ -188,13 +186,12 @@ a.nav-links:hover {
     flex-direction: column;
     padding: 20px;
 }
-
 .filter {
     margin-top: 20px;
     width: 30%;
 }
 
-/**/
+/*search bar in shop*/
 .search-input {
     color: #f97224;
     outline: 0;
