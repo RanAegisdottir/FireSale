@@ -11,6 +11,7 @@ a, a:hover {
     padding: 10px;
 }
 
+/*for the screen when the offer is too low*/
 .offer-low {
     display: flex;
     flex-direction: column;
@@ -33,6 +34,7 @@ a.nav-links:hover {
     object-fit: cover;
 }
 
+/*bara profile bubble*/
 .profile-img {
     display: flex;
     align-items: center;
@@ -56,7 +58,7 @@ a.nav-links:hover {
     padding-right: 20px;
 }
 
-/*mynd í item detail*/
+/*div til sem fer yfir hálfan skjáinn, sem geymir myndirnar*/
 .float-container {
     margin: 20px;
     color: #f97224;
@@ -65,14 +67,19 @@ a.nav-links:hover {
     object-fit: contain;
 }
 
+/*div í kringum aðal mynd í item details*/
 .first-image-detail {
     display: flex;
-    width: 300px;
-    height: 500px;
-    object-fit: contain;
-
+    width: 60%;
 }
 
+/*main photo in item details*/
+.first-image-detail img {
+    object-fit: contain;
+    width: 150%;
+}
+
+/*pictures below main photo in item details*/
 .rest-image-detail {
     display: flex;
     flex-direction: row;
@@ -80,7 +87,7 @@ a.nav-links:hover {
     height: 150px;
 }
 
-/*texti með upplýsingum í item detail*/
+/*the div around all text in item detail*/
 .child-container {
     margin-top: 40px;
     color: #f97224;
@@ -89,17 +96,24 @@ a.nav-links:hover {
     padding-right: 50px;
 }
 
+/*price in item detail*/
 .detail-title-price {
     display: flex;
     justify-content: space-between;
 }
+.prices {
+    display: flex;
+    flex-direction: column;
+}
 
+/*text under the title in item detail*/
 .side-text{
     display: flex;
     flex-direction: row;
 
 }
 
+/*offer button in item detail*/
 .offer_button {
      display: flex inline;
      border: 2px solid #f97224;
@@ -107,14 +121,13 @@ a.nav-links:hover {
      background-color: white;
     clear: both;
 }
-
-
  .offer_button:hover {
      color: white;
      clear: both;
      background-color: #f97224;
  }
 
+/*div around all place offer thing*/
 .detail-offer {
     display: flex;
     justify-content: space-around;
@@ -122,11 +135,7 @@ a.nav-links:hover {
     margin-top: 50px;
 }
 
-.prices {
-    display: flex;
-    flex-direction: column;
-}
-
+/*similar items in item details*/
 .detail-similar {
     clear: both;
     color: #f97224;
@@ -134,7 +143,7 @@ a.nav-links:hover {
 }
 
 
-/*öll items í shop síðunni*/
+/*all items in shop*/
 .product {
     width: 33%;
     text-align: center;
@@ -143,7 +152,6 @@ a.nav-links:hover {
     justify-content: flex-start;
     float: left;
 }
-
 .products {
     margin-top: 30px;
     width: 80%;
@@ -152,19 +160,16 @@ a.nav-links:hover {
     flex-direction: row;
     flex-wrap: wrap;
 }
-
 .product h4 {
     color: #f97224;
     float: left;
     width: 100%;
 }
-
 .product p {
     float: left;
     color: #F9C724;
     width: 100%;
 }
-
 .product img {
     padding-top: 20px;
     width: 250px;
@@ -172,6 +177,7 @@ a.nav-links:hover {
     object-fit: contain;
 }
 
+/*filter bar in shop*/
 .search-filter {
     margin-top: 60px;
     width: 20%;
@@ -180,12 +186,12 @@ a.nav-links:hover {
     flex-direction: column;
     padding: 20px;
 }
-
 .filter {
     margin-top: 20px;
     width: 30%;
 }
 
+/*search bar in shop*/
 .search-input {
     color: #f97224;
     outline: 0;
@@ -193,7 +199,7 @@ a.nav-links:hover {
     width: 30%;
 }
 
-/*fóturinn neðst á síðunni*/
+/*the footer on the borrom of the page*/
 .footer {
     clear: both;
     position: relative;

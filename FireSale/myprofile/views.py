@@ -4,7 +4,7 @@ from myprofile.forms.review_form import ReviewForm
 from myprofile.models import UserImage, Users
 from notification.models import Notifications
 from shop.models import Offers, ItemImage, Item
-from checkout.models import Order, Payments, Reviews
+from checkout.models import Order, Reviews
 
 
 # Create your views here.
@@ -26,10 +26,8 @@ def edit_profile(request):
         if form.is_valid():
             fullname = form.cleaned_data.get("fullname")
             bio = form.cleaned_data.get("bio")
-
             user.fullname = fullname
             user.bio = bio
-
             user.save()
             user_img = UserImage.objects.get(user=request.user)
             user_img.user_image = request.POST['image']
@@ -109,7 +107,6 @@ def review(request):
             order = Order.objects.get(offerID=offer_id)
             item_review = Reviews(order_id=order.id, rating=rating, seller_id=order.offerID.item.seller.id)
             item_review.save()
-
             reviews = Reviews.objects.filter(seller_id=order.offerID.item.seller.id)
             total = 0
             count = 0
