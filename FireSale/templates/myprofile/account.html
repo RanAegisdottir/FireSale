@@ -5,7 +5,6 @@
         <div class="profile_info_flex">
             <div class="profile_img_container">
                 <img class="profile_img" src="{{ Image.user_image }}">
-
             </div>
             <div class="profile_info_container">
                 <h3 class="user_name">{{ UserInfo.fullname | capfirst }}</h3>
@@ -32,12 +31,9 @@
             </div>
         </div>
     </div>
-
     <hr class="divider">
-
     <div class="profile_review_container" id="review_section1">
         <h1 class="profile_title">Reviews</h1>
-
         <div class="review_info_container">
             {% for review in Reviews %}
                 <h3 class="reviewer_name">{{ review.order.offerID.buyer.username | capfirst}}</h3>
@@ -68,5 +64,4 @@
                 <hr class="review_divider">
             {% endfor %}
         </div>
-{#         -----------------------------        #}
 {% endblock %}

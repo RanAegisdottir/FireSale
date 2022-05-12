@@ -144,7 +144,6 @@ h5.profile_sub_title{
 
 
 /* ---------- profile review -----------*/
-
 .profile_review_container{
     padding: 60px 300px;
 }
@@ -178,7 +177,6 @@ h5.profile_sub_title{
 }
 
 /*-------------------- Edit profile ----------------------*/
-
 .edit_btn{
     border: 2px solid #06C421;
     color: #06C421;
@@ -208,12 +206,10 @@ h5.profile_sub_title{
 }
 
 /* ------------------ my offers ----------------- */
-
 .offer_profile_container, .item_profile_container, .purchase_profile_container, .sold_profile_container{
     margin-top: 25px;
     padding: 70px 80px;
 }
-
 
 .item_container{
     display: flex;
@@ -291,12 +287,6 @@ h5.profile_sub_title{
 
 .yellow{
     color: #F9C724;
-}
-
-
-/* --------------- Purchases ---------------*/
-.edit_btn.purchase_btn{
-    /*min-width: 200px;*/
 }
 
 

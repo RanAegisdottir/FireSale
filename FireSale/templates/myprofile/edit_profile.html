@@ -1,6 +1,5 @@
 {% extends 'base-profile.html' %}
 {% block sub_content %}
-
     <div class="profile_container">
         <h1 class="profile_title">Edit Profile</h1>
         <form class="form form-horizontal create" action="{% url 'edit_profile' %}" method="post">
@@ -8,22 +7,4 @@
         {{ form }}
         <input type="submit" value="SAVE CHANGES" class="btn btn-primary pull-right create_button" style="clear:both; margin: 10px 0" />
         </form>
-{#        <div class="profile_info_flex">#}
-{#            <div class="profile_img_container">#}
-{#                    <img class="profile_img" src="{{ Image.user_image }}">#}
-{#                <button class="edit_btn edit_profile_img_btn">Change Picture</button>#}
-{#            </div>#}
-{##}
-{#            <div class="profile_info_container">#}
-{#                <h3 class="user_name edit_username">{{ Users.username | capfirst }}</h3>#}
-{#                <button class="edit_btn edit_username_btn">Change Username</button>#}
-{#                <div class="flex_break"></div>#}
-{#                <p class="user_bio">{{ UserInfo.bio }}</p>#}
-{#                <div class="flex_break"></div>#}
-{#                <button class="edit_btn edit_bio_btn">Change Bio</button>#}
-{#            </div>#}
-{##}
-{#        </div>#}
-{##}
-{#    </div>#}
 {% endblock %}

@@ -1,18 +1,12 @@
 {% load static %}
-{#<link rel="stylesheet" href="{% static 'css/profile.css' %}" />#}
-<!-- Sidebar -->
-
 <nav class="sidebar">
-
     <div class="sidebar_options_container">
         <h3 class='side_nav_title'>Account</h3>
         {% url 'myprofile-index' as profile_url %}
         <a href="{{ profile_url}}" class="side_nav_option {% if request.path == profile_url %}menu_opt_active{% endif %}"> My Profile </a>
         {% url 'edit_profile' as edit_profile_url %}
         <a href="{{ edit_profile_url }}" class="side_nav_option {% if request.path == edit_profile_url %}menu_opt_active{% endif %}"> Edit Profile </a>
-{#        <a href="{% url 'myprofile-index' %}#review_section1" class="side_nav_option {% if '#review_section1' in request.path %}menu_opt_active{% endif %}"> Reviews </a>#}
     </div>
-
     <div class="sidebar_options_container">
         <h3 class='side_nav_title'>Buying</h3>
         {% url 'my_offers' as my_offer_url %}
@@ -20,7 +14,6 @@
         {% url 'purchases' as purchases %}
         <a href="{{ purchases }}" class="side_nav_option {% if request.path == purchases %}menu_opt_active{% endif %}"> Purchases </a>
     </div>
-
     <div class="sidebar_options_container">
         <h3 class='side_nav_title'> Selling </h3>
         {% url 'my_items' as my_items_url %}
@@ -28,6 +21,4 @@
         {% url 'sold' as sold_url %}
         <a href="{{ sold_url }}" class="side_nav_option {% if request.path == sold_url %}menu_opt_active{% endif %}"> Sold </a>
     </div>
-
 </nav>
-<!-- Sidebar -->

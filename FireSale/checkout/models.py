@@ -5,9 +5,6 @@ from shop.models import Offers
 from django_countries.fields import CountryField
 
 
-
-
-
 class Payments(models.Model):
     userID = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
     card_name = models.CharField(max_length=255, default=None)
@@ -27,6 +24,7 @@ class Order(models.Model):
     offerID = models.ForeignKey(Offers, on_delete=models.CASCADE, default="")
     payID = models.ForeignKey(Payments, on_delete=models.CASCADE, default="")
     confirmed = models.BooleanField(default=False)
+
 
 class Stars(models.Model):
     star_num = models.IntegerField(default=0)

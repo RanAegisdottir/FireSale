@@ -14,7 +14,6 @@
                  {% if notif.offer.buyer == request.user and not notif.offer.item.available and not notif.offer.accepted %}
                     {% include 'notification/single_notification_declined.html' with notif=notif %}
                  {% endif %}
-
             {% endfor %}
         </div>
     </div>

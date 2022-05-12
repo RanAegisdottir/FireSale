@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from myprofile.models import UserImage
 from notification.models import Notifications
-from shop.models import Offers, Users
+from shop.models import Users
 
 
 def index(request):

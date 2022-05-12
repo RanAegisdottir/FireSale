@@ -8,8 +8,6 @@
             <p class="offer_state_title green">Accepted<br>$ {{ Offer.amount }}</p>
             <div class="flex_break"></div>
             <a href="{% url 'checkout-payment' %}?offer-id={{ Offer.id }}" class="edit_btn"> CHECKOUT </a>
-
-
             {% elif not Offer.accepted and Offer.outbid %}
                 <p class="offer_state_title red">Outbid<br>$ {{ Offer.amount }}</p>
                 <div class="flex_break"></div>
