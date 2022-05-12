@@ -53,12 +53,19 @@ def get_item_by_id(request, id):
             amount = form.cleaned_data.get('amount')
             offer = Offers(buyer=request.user, item=Item.objects.get(pk=id), amount=amount)
             item = Item.objects.get(pk=id)
-            if amount > item.heighestoffer:
-                item.heighestoffer = amount
-                item.save()
-            else:
+            if amount < item.heighestoffer:
                 return redirect('invalid-offer', id=item.id)
             offer.save()
+
+            item_offers = Offers.objects.filter(item=item)
+            for x in item_offers:
+                if x.amount > item.heighestoffer:
+                    item.heighestoffer = x.amount
+                    item.save()
+                else:
+                    x.outbid = True
+                    x.save()
+
             return render(request, 'shop/item_details.html', {
                 'products': products,
                 'Item': get_object_or_404(Item, pk=id),
