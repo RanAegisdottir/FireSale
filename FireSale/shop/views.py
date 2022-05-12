@@ -92,6 +92,9 @@ def get_item_by_id(request, id):
     })
 
 def invalid_offer(request, id):
-    context = {'product': Item.objects.filter(pk=id).first()}
+    context = {'product': Item.objects.filter(pk=id).first(),
+               'UserInfo': Users.objects.get(user_id=request.user.id),
+               'Image': UserImage.objects.get(user_id=request.user.id)
+               }
     return render(request, 'shop/offer_low.html', context)
 
