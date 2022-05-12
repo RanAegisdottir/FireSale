@@ -11,6 +11,7 @@ a, a:hover {
     padding: 10px;
 }
 
+/*for the screen when the offer is too low*/
 .offer-low {
     display: flex;
     flex-direction: column;
@@ -33,6 +34,7 @@ a.nav-links:hover {
     object-fit: cover;
 }
 
+/*bara profile bubble*/
 .profile-img {
     display: flex;
     align-items: center;
@@ -56,7 +58,7 @@ a.nav-links:hover {
     padding-right: 20px;
 }
 
-/*mynd í item detail*/
+/*div til sem fer yfir hálfan skjáinn, sem geymir myndirnar*/
 .float-container {
     margin: 20px;
     color: #f97224;
@@ -65,14 +67,19 @@ a.nav-links:hover {
     object-fit: contain;
 }
 
+/*div í kringum aðal mynd í item details*/
 .first-image-detail {
     display: flex;
-    width: 300px;
-    height: 500px;
-    object-fit: contain;
-
+    width: 60%;
 }
 
+/*aðal myndin í item details*/
+.first-image-detail img {
+    object-fit: contain;
+    width: 150%;
+}
+
+/*myndir fyrir neðan aðal mynd í item details*/
 .rest-image-detail {
     display: flex;
     flex-direction: row;
@@ -89,17 +96,24 @@ a.nav-links:hover {
     padding-right: 50px;
 }
 
+/*price in item detail*/
 .detail-title-price {
     display: flex;
     justify-content: space-between;
 }
+.prices {
+    display: flex;
+    flex-direction: column;
+}
 
+/*text under the title in item detail*/
 .side-text{
     display: flex;
     flex-direction: row;
 
 }
 
+/*offer button in item detail*/
 .offer_button {
      display: flex inline;
      border: 2px solid #f97224;
@@ -107,24 +121,18 @@ a.nav-links:hover {
      background-color: white;
     clear: both;
 }
-
-
  .offer_button:hover {
      color: white;
      clear: both;
      background-color: #f97224;
  }
 
+/*div around all place offer thing*/
 .detail-offer {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 50px;
-}
-
-.prices {
-    display: flex;
-    flex-direction: column;
 }
 
 .detail-similar {
@@ -186,6 +194,7 @@ a.nav-links:hover {
     width: 30%;
 }
 
+/**/
 .search-input {
     color: #f97224;
     outline: 0;
@@ -193,7 +202,7 @@ a.nav-links:hover {
     width: 30%;
 }
 
-/*fóturinn neðst á síðunni*/
+/*the footer on the borrom of the page*/
 .footer {
     clear: both;
     position: relative;
