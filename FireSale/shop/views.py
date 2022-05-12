@@ -45,7 +45,10 @@ def index(request):
 # show similar items, get item by id and place offer form
 def get_item_by_id(request, id):
     # similar items
+
     products = Item.objects.filter(~Q(pk=id))[:3]
+    for product in products:
+        print(product.id)
     # if there is a offer post request
     if request.method == 'POST':
         form = OfferForm(data=request.POST)
