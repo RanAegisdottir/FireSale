@@ -29,7 +29,7 @@
         </div>
         <div class="flex_break"></div>
         <div class="confirm_btn_container">
-            <a href="{% url 'checkout-payment' %}?offer-id={{ order.offerID.id }}" class="checkout_btn"> BACK </a>
+            <a href="{% url 'checkout-payment' %}?offer-id={{ order.offerID.id }}&pay-id={{ order.payID.id }}" class="checkout_btn"> BACK </a>
             <a href="{% url 'save' %}?order-id={{ order.id }}&payment-id={{ order.payID.id }}" class="checkout_btn"> CONFIRM </a>
         </div>
 

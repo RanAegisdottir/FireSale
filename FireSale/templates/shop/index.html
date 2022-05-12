@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+<!--the style sheet in the static file-->
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/main.css' %}" />
 {% block content  %}
@@ -19,13 +20,14 @@
                 <button type="button" id="search-btn" class="btn btn-default"><img src='{% static 'images/search icon.jpg' %}' height="20px" width="20px"/></button>
             </div>
         </div>
-
         <div class="filter">
             <div class="d-flex g4 gsx ai-center sm:fd-column sm:ai-start">
             <div class="flex--item s-select">
                 <select id="answer-sort-dropdown-select-menu">
-                    <option value=price-high selected=selected>highest price</option>
-                    <option value=price-low>lowest price</option>
+                    <option value=price-high selected=selected>highest price idea</option>
+                    <option value=price-low>lowest price idea</option>
+                    <option value=offer-high>highest offer</option>
+                    <option value=offer-low>lowest offer</option>
                     <option value=order-alpha>alphabetical order</option>
                 </select>
             </div>

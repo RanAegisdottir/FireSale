@@ -1,17 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-{#<link rel="stylesheet" href="{% static 'css/profile.css' %}" />#}
-
 {% block content %}
     <div class="profile_flex_container">
         <div class="profile_content_container">
             {% include 'myprofile/myprofile_navigation.html' with User=auth_user %}
         </div>
-
         <div class="profile_content_container">
             {% block sub_content %}
             {% endblock %}
         </div>
     </div>
-
 {% endblock %}

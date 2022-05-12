@@ -5,6 +5,7 @@ from myprofile.models import UserImage, Users
 from shop.models import Item, Offers
 from shop.forms.offer_form import OfferForm
 
+
 # Create your views here.
 def index(request):
     # search filter
@@ -22,11 +23,15 @@ def index(request):
     if 'order' in request.GET:
         order = request.GET['order']
         if order == 'order-alpha':
-            order_string = 'name';
+            order_string = 'name'
         if order == 'price-high':
-            order_string = '-heighestoffer';
+            order_string = '-priceidea'
         if order == 'price-low':
-            order_string = 'heighestoffer';
+            order_string = 'priceidea'
+        if order == 'offer-high':
+            order_string = '-heighestoffer'
+        if order == 'offer-low':
+            order_string = 'heighestoffer'
         products = [{
             'id': x.id,
             'name': x.name,
@@ -35,17 +40,17 @@ def index(request):
             'image': x.itemimage_set.first().imgURL
         } for x in Item.objects.order_by(order_string)]
         return JsonResponse({'data': products})
-
     # show all products
     context = {'products': Item.objects.all(),
                'Image': UserImage.objects.get(user_id=request.user.id),
                'UserInfo': Users.objects.get(user_id=request.user.id)}
     return render(request, 'shop/index.html', context)
 
+
 # show similar items, get item by id and place offer form
 def get_item_by_id(request, id):
     # similar items
-    products = Item.objects.filter(~Q(pk=id))[:3]
+    products = Item.objects.filter(available=True).filter(~Q(pk=id))[:3]
     # if there is a offer post request
     if request.method == 'POST':
         form = OfferForm(data=request.POST)
@@ -53,12 +58,17 @@ def get_item_by_id(request, id):
             amount = form.cleaned_data.get('amount')
             offer = Offers(buyer=request.user, item=Item.objects.get(pk=id), amount=amount)
             item = Item.objects.get(pk=id)
-            if amount > item.heighestoffer:
-                item.heighestoffer = amount
-                item.save()
-            else:
+            if amount < item.heighestoffer:
                 return redirect('invalid-offer', id=item.id)
             offer.save()
+            item_offers = Offers.objects.filter(item=item)
+            for x in item_offers:
+                if x.amount > item.heighestoffer:
+                    item.heighestoffer = x.amount
+                    item.save()
+                else:
+                    x.outbid = True
+                    x.save()
             return render(request, 'shop/item_details.html', {
                 'products': products,
                 'Item': get_object_or_404(Item, pk=id),
@@ -75,7 +85,6 @@ def get_item_by_id(request, id):
                 'Image': UserImage.objects.get(user_id=request.user.id),
                 'form': form
             })
-
     return render(request, 'shop/item_details.html', {
         'products': products,
         'Item': get_object_or_404(Item, pk=id),
@@ -84,7 +93,11 @@ def get_item_by_id(request, id):
         'form': OfferForm()
     })
 
+
 def invalid_offer(request, id):
-    context = {'product': Item.objects.filter(pk=id).first()}
+    context = {'product': Item.objects.filter(pk=id).first(),
+               'UserInfo': Users.objects.get(user_id=request.user.id),
+               'Image': UserImage.objects.get(user_id=request.user.id)
+               }
     return render(request, 'shop/offer_low.html', context)
 
