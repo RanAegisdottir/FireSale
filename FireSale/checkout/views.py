@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from checkout.models import Payments, Order
 from checkout.forms.checkout_form import CheckoutForm
 from myprofile.models import UserImage, Users
@@ -37,7 +37,14 @@ def checkout_payment(request):
                 'UserInfo': Users.objects.get(user_id=request.user.id)})
 
     else:
-        form = CheckoutForm()
+        if request.GET.get('pay-id','') != '':
+            order_id = request.GET.get('pay-id','')
+            order = Order.objects.get(payID=order_id)
+            payment = order.payID
+            instance = get_object_or_404(Payments, id=payment.id)
+            form = CheckoutForm(instance=instance)
+        else:
+            form = CheckoutForm()
         offer_id = request.GET.get('offer-id', '')
     return render(request, 'checkout/checkout_payment.html', {
         'form': form,
