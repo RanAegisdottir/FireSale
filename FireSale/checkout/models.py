@@ -8,9 +8,9 @@ from django_countries.fields import CountryField
 class Payments(models.Model):
     userID = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
     card_name = models.CharField(max_length=255, default=None)
-    card_num = models.BigIntegerField(default=None)
+    card_num = models.CharField(default=None, max_length=16)
     exdate = models.DateField(default=None)
-    CVC = models.IntegerField(default=None)
+    CVC = models.CharField(default='000', max_length=3)
     companyname = models.CharField(max_length=255, default=None, blank=True)
     country = CountryField(blank_label='(select country)', default=None)
     street = models.CharField(max_length=255, default=None)

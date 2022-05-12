@@ -22,5 +22,5 @@ class CheckoutForm(ModelForm):
             'card_name': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Cardholder Name...'}),
             'card_num': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Card-number...'}),
             'exdate': ExDateInput(attrs={'class': 'form-control'}),
-            'CVC': widgets.NumberInput(attrs={'class': 'form-control', 'placeholder': 'CVC...', 'min': 0, 'max': 999})
+            'CVC': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'CVC...'})
         }

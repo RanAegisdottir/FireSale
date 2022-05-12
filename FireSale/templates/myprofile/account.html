@@ -62,6 +62,10 @@
                 {% endif %}
                 <div class="flex_break"></div>
                 <hr class="review_divider">
+            {% empty %}
+                <div class="empty_message_container">
+                    <h5 class="empty_message">You have no reviews.</h5>
+                </div>
             {% endfor %}
         </div>
 {% endblock %}

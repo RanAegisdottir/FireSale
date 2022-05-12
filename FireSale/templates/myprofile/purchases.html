@@ -4,9 +4,11 @@
         <h1 class="profile_title">Purchases</h1>
         <div class="item_container">
             {% for Offer in Offers %}
-                {% if not Offer.item.available %}
                     {% include 'myprofile/single_purchase.html' %}
-                {% endif %}
+            {% empty %}
+                <div class="empty_message_container">
+                    <h5 class="empty_message">You have no purchases.</h5>
+                </div>
             {% endfor %}
         </div>
     </div>
