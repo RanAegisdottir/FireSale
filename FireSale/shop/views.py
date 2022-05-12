@@ -5,6 +5,7 @@ from myprofile.models import UserImage, Users
 from shop.models import Item, Offers
 from shop.forms.offer_form import OfferForm
 
+
 # Create your views here.
 def index(request):
     # search filter
@@ -44,6 +45,7 @@ def index(request):
                'Image': UserImage.objects.get(user_id=request.user.id),
                'UserInfo': Users.objects.get(user_id=request.user.id)}
     return render(request, 'shop/index.html', context)
+
 
 # show similar items, get item by id and place offer form
 def get_item_by_id(request, id):
@@ -90,6 +92,7 @@ def get_item_by_id(request, id):
         'Image': UserImage.objects.get(user_id=request.user.id),
         'form': OfferForm()
     })
+
 
 def invalid_offer(request, id):
     context = {'product': Item.objects.filter(pk=id).first(),

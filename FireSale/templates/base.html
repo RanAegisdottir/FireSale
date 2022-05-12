@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 </head>
 <body>
+    <!--the fire line in the navigation-->
     <div class="nav-image">
         <img src="{% static 'images/fireline.png' %}" alt="fireline">
     </div>
     {% include 'navigation.html' %}
-
     <main>
         {% block content %}
         {% endblock %}
