@@ -5,7 +5,10 @@
         <div class="item_container">
             {% for Item in my_items_products %}
                 {% include 'myprofile/single_seller_item.html' with Item=Item Offers=Offers %}
-{#                {% include 'shop/single_item.html' with Item=Item %}#}
+            {% empty %}
+                <div class="empty_message_container">
+                    <h5 class="empty_message">You have no items for sale.</h5>
+                </div>
             {% endfor %}
         </div>
     </div>

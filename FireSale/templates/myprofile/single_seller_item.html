@@ -4,7 +4,6 @@
         <a href="/shop/{{ Item.id }}">
             <h5 class="offer_item_title">{{ Item.name | capfirst}}</h5>
         </a>
-        <button class="cancel_offer_btn" >X</button>
         <div class="flex_break"></div>
             {% if Item.heighestoffer == 0 %}
 {#                    IF THERE ARE NO OFFERS SHOW: 'NO OFFERS'#}
@@ -15,7 +14,7 @@
                         {% if offer.accepted == False %}
                             <p class="offer_state_title green">Highest offer: <br>$ {{ Item.heighestoffer }}</p>
                             <div class="flex_break"></div>
-                            <a href="{% url 'accept' %}?offer-id={{ offer.id }}" class="checkout_link"> Accept </a>
+                            <a href="{% url 'accept' %}?offer-id={{ offer.id }}" class="edit_btn"> Accept </a>
                         {% else %}
                             <p class="offer_state_title yellow">Pending...<br>$ {{ offer.amount }}</p>
                             <div class="flex_break"></div>

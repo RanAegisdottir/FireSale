@@ -51,7 +51,8 @@ def my_offers(request):
     return render(request, 'myprofile/my_offers.html', {
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id),
-        'Offers': Offers.objects.filter(buyer_id=request.user.id),
+        'Available_Offers': Offers.objects.filter(buyer_id=request.user.id, item__available=True),
+        'Declined_Offers': Offers.objects.filter(buyer_id=request.user.id, item__available=False, accepted=False),
         'ItemImage': ItemImage.objects.all(),
         'Orders': Order.objects.all(),
         'UserInfo': Users.objects.get(user_id=request.user.id)
@@ -65,7 +66,7 @@ def purchases(request):
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id),
         'UserInfo': Users.objects.get(user_id=request.user.id),
-        'Offers': Offers.objects.filter(buyer_id=request.user.id, accepted=True)
+        'Offers': Offers.objects.filter(buyer_id=request.user.id, accepted=True, item__available=False)
     })
 
 
