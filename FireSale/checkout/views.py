@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from checkout.models import Payments, Order
 from checkout.forms.checkout_form import CheckoutForm
 from myprofile.models import UserImage, Users
 from shop.models import Offers, Item
 
-#View for checkout
+
+# View for checkout
 def index(request):
     return render(request, 'checkout/index.html')
 
@@ -64,8 +65,8 @@ def checkout_payment(request):
             'UserInfo': Users.objects.get(user_id=request.user.id),
             'offer_id': offer_id})
 
-    #If user goes back to change his information this code prepopulates the form so he doesnt
-    #have to put all the information back in.
+    # If user goes back to change his information this code prepopulates the form so he doesnt
+    # have to put all the information back in.
     if request.GET.get('pay-id', '') != '':
         order_id = request.GET.get('pay-id', '')
         order = Order.objects.get(payID=order_id)
@@ -82,7 +83,7 @@ def checkout_payment(request):
         'offer_id': offer_id})
 
 
-#Show all the checkout detail and order detail
+# Show all the checkout detail and order detail
 def confirm(request, payment_id):
     return render(request, 'checkout/confirm.html', {
         'payment': Payments.objects.get(id=payment_id),

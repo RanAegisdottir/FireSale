@@ -2,7 +2,7 @@
 $(document).ready(function() {
     $('#search-btn').on('click', function(e) {
         e.preventDefault()
-        var searchText = $('#search-box').val();
+        let searchText = $('#search-box').val();
         $.ajax({
             url: '/shop?search_filter=' + searchText,
             type: 'GET',
@@ -15,7 +15,7 @@ $(document).ready(function() {
                     }
                     return `<div class="product">
                             <a href="/shop/${ d.id }">
-                            <img class="item-img" src="${ d.image }" />
+                            <img class="item-img" src="${ d.image }" alt="item-img"/>
                             <h4>${ d.name }</h4>                           
                             <p>$ ${price}</p>
                             </a>
@@ -32,7 +32,7 @@ $(document).ready(function() {
     /* dropdown for filtering shop items */
     $('#answer-sort-dropdown-select-menu').on('change', function (e) {
         console.log(this.value)
-        var value = this.value;
+        let value = this.value;
         e.preventDefault()
         $.ajax( {
             url: '/shop?order=' + value,
@@ -46,7 +46,7 @@ $(document).ready(function() {
                     }
                     return `<div class="product">
                             <a href="/shop/${ d.id }">
-                            <img class="item-img" src="${ d.image }" />
+                            <img class="item-img" src="${ d.image }" alt="item-img"/>
                             <h4>${ d.name }</h4>
                             <p>$ ${ price }</p>
                             </a>

@@ -7,8 +7,7 @@ from shop.models import Offers, ItemImage, Item
 from checkout.models import Order, Reviews
 
 
-
-#Main profile site where you can see your fullname, bio, image and reviews
+# Main profile site where you can see your fullname, bio, image and reviews
 def index(request):
     user_reviews = Reviews.objects.filter(seller_id=request.user.id)
     return render(request, 'myprofile/account.html', {
@@ -18,7 +17,8 @@ def index(request):
         'Reviews': user_reviews
     })
 
-#Edit profile site
+
+# Edit profile site
 def edit_profile(request):
     instance = get_object_or_404(Users, user=request.user)
     user = Users.objects.get(user=request.user)
@@ -45,7 +45,8 @@ def edit_profile(request):
         'UserInfo': Users.objects.get(user_id=request.user.id)
     })
 
-#my offers site
+
+# my offers site
 def my_offers(request):
     return render(request, 'myprofile/my_offers.html', {
         'Users': request.user,
@@ -57,7 +58,8 @@ def my_offers(request):
         'UserInfo': Users.objects.get(user_id=request.user.id)
     })
 
-#purchases site
+
+# purchases site
 def purchases(request):
     return render(request, 'myprofile/purchases.html', {
         'purchased_by': Order.objects.filter(payID__userID=request.user.id),
@@ -68,7 +70,8 @@ def purchases(request):
         'Offers': Offers.objects.filter(buyer_id=request.user.id, accepted=True, item__available=False)
     })
 
-#my items site
+
+# my items site
 def my_items(request):
     return render(request, 'myprofile/my_items.html', {
         'my_items_products': Item.objects.filter(seller=request.user.id, available=True),
@@ -78,7 +81,8 @@ def my_items(request):
         'Offers': Offers.objects.all()
     })
 
-#sold items site
+
+# sold items site
 def sold(request):
     return render(request, 'myprofile/sold.html', {
         'sold_products': Item.objects.filter(seller=request.user.id, available=False),
@@ -87,7 +91,8 @@ def sold(request):
         'UserInfo': Users.objects.get(user_id=request.user.id)
     })
 
-#When you accept an offer a notification sends to all the users that offered in the item
+
+# When you accept an offer a notification sends to all the users that offered in the item
 def accept(request):
     offer_id = request.GET.get('offer-id', '')
     offer = Offers.objects.get(id=offer_id)
@@ -99,7 +104,8 @@ def accept(request):
         notification.save()
     return redirect('my_items')
 
-#review site
+
+# review site
 def review(request):
     if request.method == 'POST':
         form = ReviewForm(data=request.POST)
@@ -111,7 +117,7 @@ def review(request):
             item_review.save()
             reviews = Reviews.objects.filter(seller_id=offer.item.seller.id)
 
-        #calculating the average rating
+        # calculating the average rating
             total = 0
             count = 0
             for x in reviews:
