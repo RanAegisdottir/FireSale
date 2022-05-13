@@ -6,7 +6,7 @@
         <p id="no_account">Don't have an account?</p>
     </div>
     <div id="user_pass_input">
-    <form method="post", class="form form_horizontal login_form">
+    <form method="post" class="form form_horizontal login_form">
         {% csrf_token %}
         {{ form }}
     <input type="submit" class="btn btn_primary login_button" value="Login">
