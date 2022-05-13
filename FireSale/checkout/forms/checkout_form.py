@@ -14,10 +14,12 @@ class CheckoutForm(ModelForm):
         exclude = ['id', 'userID', 'confirmed']
         widgets = {
             'street': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Street-name...'}),
+            'housenumber': widgets.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Housenumber...'}),
             'zip': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Zip...'}),
             'city': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'City...'}),
             'phone': widgets.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Phone Number...'}),
             'country': CountrySelectWidget(attrs={'class': 'form-country-input'}),
+            'fullname': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Fullname...'}),
             'companyname': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Company Name...'}),
             'card_name': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Cardholder Name...'}),
             'card_num': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Card-number...'}),
