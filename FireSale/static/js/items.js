@@ -1,3 +1,4 @@
+/* search shop item */
 $(document).ready(function() {
     $('#search-btn').on('click', function(e) {
         e.preventDefault()
@@ -28,6 +29,7 @@ $(document).ready(function() {
             }
         })
     });
+    /* dropdown for filtering shop items */
     $('#answer-sort-dropdown-select-menu').on('change', function (e) {
         console.log(this.value)
         var value = this.value;
