@@ -37,16 +37,18 @@ def checkout_payment(request):
                     'offer_id': offer_id})
 
             street = form.cleaned_data.get('street')
+            housenumber = form.cleaned_data.get('housenumber')
             zip = form.cleaned_data.get('zip')
             city = form.cleaned_data.get('city')
             phone = form.cleaned_data.get('phone')
             country = form.cleaned_data.get('country')
+            fullname = form.cleaned_data.get('fullname')
             company_name = form.cleaned_data.get('companyname')
             card_name = form.cleaned_data.get('card_name')
             exdate = form.cleaned_data.get('exdate')
 
-            payment = Payments(userID=request.user, card_name=card_name, card_num=card_num, exdate=exdate, CVC=cvc,
-                               companyname=company_name, country=country, street=street, zip=zip, city=city,
+            payment = Payments(userID=request.user, card_name=card_name, card_num=card_num, exdate=exdate, CVC=cvc, fullname=fullname,
+                               companyname=company_name, country=country, street=street, housenumber=housenumber, zip=zip, city=city,
                                phone=phone, confirmed=False)
             payment.save()
 
