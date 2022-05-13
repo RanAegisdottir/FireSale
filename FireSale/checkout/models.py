@@ -36,6 +36,6 @@ class Stars(models.Model):
 class Reviews(models.Model):
     seller = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=None)
     rating = models.ForeignKey(Stars, on_delete=models.CASCADE, default=None)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, default="")
+    offer = models.ForeignKey(Offers, on_delete=models.CASCADE, default="")
 
 
