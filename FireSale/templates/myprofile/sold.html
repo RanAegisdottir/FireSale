@@ -3,7 +3,7 @@
     <div class="profile_container">
         <h1 class="profile_title">Sold Items</h1>
         <div class="items_container">
-        {# Get all the items from sold_products #}
+            {# Get all the items from sold_products #}
             {% for Item in sold_products %}
                 {% include 'myprofile/single_sold_item.html' with Item=Item %}
             {% empty %}

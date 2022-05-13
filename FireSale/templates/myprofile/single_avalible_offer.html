@@ -4,7 +4,7 @@
     <div class="single_item_info_container">
         <h5 class="item_title">{{ Offer.item.name | capfirst}}</h5>
         <div class="flex_break"></div>
-{# If the offer is accepted, or not accepted & outbid, or not accepted & not outbid, is show corresponding message and button  #}
+        {# If the offer is accepted, or not accepted & outbid, or not accepted & not outbid, is show corresponding message and button  #}
         {% if Offer.accepted %}
             <p class="green">Accepted<br>$ {{ Offer.amount }}</p>
             <div class="flex_break"></div>
