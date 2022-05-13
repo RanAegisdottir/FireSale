@@ -4,11 +4,11 @@
     <!--all images connected to certain object-->
     <div class="float-container">
         <div class="first-image-detail">
-            <img src="{{ Item.itemimage_set.first.imgURL }}"/>
+            <img src="{{ Item.itemimage_set.first.imgURL }}" alt="Image"/>
         </div>
         <div class="rest-image-detail">
         {% for item_img in Item.itemimage_set.all %}
-            <img src="{{ item_img.imgURL }}"/>
+            <img src="{{ item_img.imgURL }}" alt="Image"/>
         {% endfor %}
         </div>
     </div>
