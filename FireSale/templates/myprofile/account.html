@@ -36,10 +36,10 @@
         <h1 class="profile_title">Reviews</h1>
         <div class="review_info_container">
             {% for review in Reviews %}
-                <h3 class="reviewer_name">{{ review.order.offerID.buyer.username | capfirst}}</h3>
+                <h3 class="reviewer_name">{{ review.offer.buyer.username | capfirst}}</h3>
                 <div class="flex_break"></div>
                 <h5 class="review_sub_title">Item: </h5>
-                <p>{{ review.order.offerID.item.name }}</p>
+                <p>{{ review.offer.item.name }}</p>
                 <div class="flex_break"></div>
                 <h5 class="review_sub_title">Rating:</h5>
                 {% if review.rating.star_num == 0 %}

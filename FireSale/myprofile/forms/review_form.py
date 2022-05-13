@@ -5,7 +5,7 @@ from checkout.models import Reviews
 class ReviewForm(ModelForm):
     class Meta:
         model = Reviews
-        exclude = ['id', 'order', 'seller']
+        exclude = ['id', 'offer', 'seller']
         widgets ={
             'rating': widgets.Select(attrs={'class': 'form-control'})
         }

@@ -105,10 +105,10 @@ def review(request):
         if form.is_valid():
             rating = form.cleaned_data.get('rating')
             offer_id = request.GET.get('offer-id', '')
-            order = Order.objects.get(offerID=offer_id)
-            item_review = Reviews(order_id=order.id, rating=rating, seller_id=order.offerID.item.seller.id)
+            offer = Offers.objects.get(id=offer_id)
+            item_review = Reviews(offer_id=offer.id, rating=rating, seller_id=offer.item.seller.id)
             item_review.save()
-            reviews = Reviews.objects.filter(seller_id=order.offerID.item.seller.id)
+            reviews = Reviews.objects.filter(seller_id=offer.item.seller.id)
             total = 0
             count = 0
             for x in reviews:
@@ -116,7 +116,7 @@ def review(request):
                 count += 1
 
             avg_rating = total // count
-            user = Users.objects.get(user_id=order.offerID.item.seller.id)
+            user = Users.objects.get(user_id=offer.item.seller.id)
             user.rating = avg_rating
             user.save()
 
