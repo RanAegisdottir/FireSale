@@ -1,12 +1,13 @@
 <div class="single_item_container">
+    {# Show the main (first) item image #}
     <img class="single_item_img" src="{{ Offer.item.itemimage_set.first.imgURL }}" alt="{{ Offer.item.name }} image" />
     <div class="single_item_info_container">
         <h5 class="item_title">{{ Offer.item.name | capfirst}}</h5>
         <div class="flex_break"></div>
         <p class="green">Confirmed<br>$ {{ Offer.amount }}</p>
         <div class="flex_break"></div>
-{#        {% if Offer.order_set.first.reviews_set.count == 0 %}#}
-          {% if Offer.reviews_set.count == 0 %}
+        {# If the user has not given a review for the purchase then show 'Give Review button' #}
+        {% if Offer.reviews_set.count == 0 %}
             <a href="{% url 'review' %}?offer-id={{ Offer.id }}" class="edit_btn"> Give Review </a>
         {% else %}
             <p class="green">Review sent</p>

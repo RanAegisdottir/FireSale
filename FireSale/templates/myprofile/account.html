@@ -8,6 +8,7 @@
     <div class="profile_review_container" id="review_section1">
         <h1 class="profile_title">Reviews</h1>
         <div class="review_info_container">
+            {# To show each review the user has, if the user has no reviews then show empty message #}
             {% for review in Reviews %}
                 {% include 'myprofile/single_review.html' with review=review %}
             {% empty %}

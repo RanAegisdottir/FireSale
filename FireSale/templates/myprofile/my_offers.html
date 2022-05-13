@@ -3,6 +3,7 @@
     <div class="profile_container">
         <h1 class="profile_title">My Offers</h1>
         <div class="items_container">
+            {# Show users offers where the item is still available (not sold), if user has none then show empty message #}
             {% for Offer in Available_Offers %}
                     {% include 'myprofile/single_avalible_offer.html' %}
             {% empty %}
@@ -16,6 +17,7 @@
     <div class="profile_container">
         <h1 class="profile_title">Declined Offers</h1>
         <div class="items_container">
+            {# Show users declined offers where the item is not available (sold) & the offer is not accepted, if user has none then show empty message #}
             {% for Offer in Declined_Offers %}
                     {% include 'myprofile/single_declined_offer.html' %}
             {% empty %}

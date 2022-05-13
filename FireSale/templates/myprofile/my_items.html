@@ -3,6 +3,7 @@
     <div class="profile_container">
         <h1 class="profile_title">Items For Sale</h1>
         <div class="items_container">
+            {# Show user items that are available (not sold), if the user has no items then show empty message #}
             {% for Item in my_items_products %}
                 {% include 'myprofile/single_seller_item.html' with Item=Item Offers=Offers %}
             {% empty %}

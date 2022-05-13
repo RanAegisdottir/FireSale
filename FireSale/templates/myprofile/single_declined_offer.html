@@ -1,4 +1,5 @@
 <div class="single_item_container">
+    {# Show the main (first) item image #}
     <img class="single_item_img" src="{{ Offer.item.itemimage_set.first.imgURL }}" alt="{{ Offer.item.name }} image" />
     <div class="single_item_info_container">
         <h5 class="item_title">{{ Offer.item.name | capfirst}}</h5>

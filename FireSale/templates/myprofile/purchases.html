@@ -3,6 +3,7 @@
     <div class="profile_container">
         <h1 class="profile_title">Purchases</h1>
         <div class="items_container">
+            {# Show users offers where the item is not available (sold) & the offer has been accepted, if user has none then show empty message #}
             {% for Offer in Offers %}
                     {% include 'myprofile/single_purchase.html' %}
             {% empty %}

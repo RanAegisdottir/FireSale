@@ -63,7 +63,6 @@ def my_offers(request):
 def purchases(request):
     return render(request, 'myprofile/purchases.html', {
         'purchased_by': Order.objects.filter(payID__userID=request.user.id),
-        # 'same_user_in_offers': Offers.objects.filter(buyer=purchased_by, Item=item),
         'Users': request.user,
         'Image': UserImage.objects.get(user_id=request.user.id),
         'UserInfo': Users.objects.get(user_id=request.user.id),

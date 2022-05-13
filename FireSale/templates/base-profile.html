@@ -7,7 +7,7 @@
             {% include 'myprofile/myprofile_navigation.html' with User=auth_user %}
         </div>
         <div class="profile_content_container">
-            {#   Include the sidebar for all profile pages  #}
+            {#   Block to add page content  #}
             {% block sub_content %}
             {% endblock %}
         </div>

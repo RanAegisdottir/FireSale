@@ -2,6 +2,7 @@
 {% block sub_content %}
     <div class="profile_container">
         <h1 class="profile_title">Edit Profile</h1>
+        {# Edit profile form #}
         <form class="form form-horizontal create" action="{% url 'edit_profile' %}" method="post">
         {% csrf_token %}
         {{ form }}
