@@ -9,13 +9,16 @@
                 {# IF THERE ARE NO OFFERS SHOW: 'NO OFFERS'#}
                 <p class="red">No offers<br></p>
             {% else %}
+                {# Go through all the offers #}
                 {% for offer in Offers %}
+                    {# Check if the item has an offer and iff so you can accept the offer #}
                     {% if offer.amount == Item.heighestoffer and offer.item.id == Item.id %}
                         {% if offer.accepted == False %}
                             <p class="green">Highest offer: <br>$ {{ Item.heighestoffer }}</p>
                             <div class="flex_break"></div>
                             <a href="{% url 'accept' %}?offer-id={{ offer.id }}" class="edit_btn"> Accept </a>
                         {% else %}
+                            {# else if the item already been accepted then it will get pending status #}
                             <p class="yellow">Pending...<br>$ {{ offer.amount }}</p>
                             <div class="flex_break"></div>
                         {% endif %}
