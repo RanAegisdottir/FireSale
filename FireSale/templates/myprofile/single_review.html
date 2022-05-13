@@ -4,6 +4,7 @@
 <p>{{ review.offer.item.name }}</p>
 <div class="flex_break"></div>
 <h5 class="review_sub_title">Rating:</h5>
+{# Show corresponding image for the rating #}
 {% if UserInfo.rating == 1 %}
     <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 1.png" alt="1 Star rating image">
 {% elif UserInfo.rating == 2 %}
