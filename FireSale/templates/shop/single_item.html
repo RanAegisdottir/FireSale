@@ -1,7 +1,7 @@
 <!--all items in the shop page-->
 <div class="product">
     <a href="/shop/{{ Item.id }}">
-        <img class="item-img" src="{{ Item.itemimage_set.first.imgURL }}" />
+        <img class="item-img" src="{{ Item.itemimage_set.first.imgURL }}" alt="Iem" />
         <h4>{{ Item.name }}</h4>
         <!--check if price idea or offer is higher. show the price that is higher-->
         {% if Item.priceidea < Item.heighestoffer %}

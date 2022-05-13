@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
     <div class="checkout_confirmed_container">
         <h1 class="checkout_confirmed_title">Order Details</h1>
         <div class="flex_break"></div>
@@ -13,9 +14,12 @@
             <p class="card_name">Expire date: {{ order.payID.exdate | capfirst }}</p>
         </div>
         <div class="confirm_info_container">
-            <h4>Address Info</h4>
+            <h4>Contact Info</h4>
             <hr class="confirm_divider">
+            <p class="card_name">Fullname: {{ order.payID.fullname | capfirst }}</p>
+            <p class="card_name">Company Name: {{ order.payID.companyname | capfirst }}</p>
             <p class="card_name">Street: {{ order.payID.street | capfirst }}</p>
+            <p class="card_name">House Number: {{ order.payID.housenumber | capfirst }}</p>
             <p class="card_name">ZIP: {{ order.payID.zip | capfirst }}</p>
             <p class="card_name">City: {{ order.payID.city | capfirst }}</p>
             <p class="card_name">Country: {{ order.payID.country | capfirst }}</p>
@@ -23,7 +27,7 @@
         <div class="confirm_info_container">
             <h4>Order Info</h4>
             <hr class="confirm_divider">
-            <p class="card_name">Item name: {{ order.offerID.item.name | capfirst }}</p>
+            <p class="card_name">Item Name: {{ order.offerID.item.name | capfirst }}</p>
             <p class="card_name">Price: {{ order.offerID.amount| capfirst }}</p>
             <p class="card_name">Seller: {{ order.offerID.item.seller | capfirst }}</p>
         </div>

@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from checkout.models import Payments, Order
 from checkout.forms.checkout_form import CheckoutForm
 from myprofile.models import UserImage, Users
 from shop.models import Offers, Item
 
-#View for checkout
+
+# View for checkout
 def index(request):
     return render(request, 'checkout/index.html')
 
@@ -36,16 +37,18 @@ def checkout_payment(request):
                     'offer_id': offer_id})
 
             street = form.cleaned_data.get('street')
+            housenumber = form.cleaned_data.get('housenumber')
             zip = form.cleaned_data.get('zip')
             city = form.cleaned_data.get('city')
             phone = form.cleaned_data.get('phone')
             country = form.cleaned_data.get('country')
+            fullname = form.cleaned_data.get('fullname')
             company_name = form.cleaned_data.get('companyname')
             card_name = form.cleaned_data.get('card_name')
             exdate = form.cleaned_data.get('exdate')
 
-            payment = Payments(userID=request.user, card_name=card_name, card_num=card_num, exdate=exdate, CVC=cvc,
-                               companyname=company_name, country=country, street=street, zip=zip, city=city,
+            payment = Payments(userID=request.user, card_name=card_name, card_num=card_num, exdate=exdate, CVC=cvc, fullname=fullname,
+                               companyname=company_name, country=country, street=street, housenumber=housenumber, zip=zip, city=city,
                                phone=phone, confirmed=False)
             payment.save()
 
@@ -64,8 +67,8 @@ def checkout_payment(request):
             'UserInfo': Users.objects.get(user_id=request.user.id),
             'offer_id': offer_id})
 
-    #If user goes back to change his information this code prepopulates the form so he doesnt
-    #have to put all the information back in.
+    # If user goes back to change his information this code prepopulates the form so he doesnt
+    # have to put all the information back in.
     if request.GET.get('pay-id', '') != '':
         order_id = request.GET.get('pay-id', '')
         order = Order.objects.get(payID=order_id)
@@ -82,7 +85,7 @@ def checkout_payment(request):
         'offer_id': offer_id})
 
 
-#Show all the checkout detail and order detail
+# Show all the checkout detail and order detail
 def confirm(request, payment_id):
     return render(request, 'checkout/confirm.html', {
         'payment': Payments.objects.get(id=payment_id),
