@@ -1,0 +1,49 @@
+
+/* --- Sidebar --- */
+
+/* Sidebar container */
+.sidebar {
+  	background-color:#F97D24;
+    height: 100%;
+    width: 240px;
+    z-index: 600;
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+/* Title of the link selections */
+.side_nav_title{
+  	color: white;
+    border-bottom: 2px solid white;
+    margin: 0 40px 8px 40px;
+    width: auto;
+}
+
+/* link container */
+.sidebar_options_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+
+/* link option */
+.side_nav_option{
+    color: #fbfbfb;
+    padding: 15px 0 15px 40px;
+    width: 100%;
+}
+
+/* link on hover, so user can see the link they are on */
+.side_nav_option:hover{
+    background-color: #FF903F;
+    color: #fbfbfb;
+    font-size: larger;
+}
+
+.menu_opt_active{
+    background-color: #FF903F;
+    color: #fbfbfb;
+    font-size: larger;
+}

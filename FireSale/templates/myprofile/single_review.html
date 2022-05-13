@@ -1,0 +1,21 @@
+<h3 class="reviewer_name">{{ review.offer.buyer.username | capfirst}}</h3>
+<div class="flex_break"></div>
+<h5 class="review_sub_title">Item: </h5>
+<p>{{ review.offer.item.name }}</p>
+<div class="flex_break"></div>
+<h5 class="review_sub_title">Rating:</h5>
+{% if UserInfo.rating == 1 %}
+    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 1.png" alt="1 Star rating image">
+{% elif UserInfo.rating == 2 %}
+    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire stars 2.png" alt="2 Star rating image">
+{% elif UserInfo.rating == 3 %}
+    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 3.png" alt="3 Star rating image">
+{% elif UserInfo.rating == 4 %}
+    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 4.png" alt="4 Star rating image">
+{% elif UserInfo.rating == 5 %}
+    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 5.png" alt="5 Star rating image">
+{% else %}
+    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png" alt="0 Star rating image">
+{% endif %}
+<div class="flex_break"></div>
+<hr class="divider review_divider">

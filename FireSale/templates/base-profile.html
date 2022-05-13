@@ -3,9 +3,11 @@
 {% block content %}
     <div class="profile_flex_container">
         <div class="profile_content_container">
+            {#   Include the sidebar for all profile pages  #}
             {% include 'myprofile/myprofile_navigation.html' with User=auth_user %}
         </div>
         <div class="profile_content_container">
+            {#   Include the sidebar for all profile pages  #}
             {% block sub_content %}
             {% endblock %}
         </div>

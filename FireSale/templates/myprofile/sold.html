@@ -1,13 +1,13 @@
 {% extends 'base-profile.html' %}
 {% block sub_content %}
-    <div class="sold_profile_container">
+    <div class="profile_container">
         <h1 class="profile_title">Sold Items</h1>
-        <div class="item_container">
+        <div class="items_container">
             {% for Item in sold_products %}
                 {% include 'myprofile/single_sold_item.html' with Item=Item %}
             {% empty %}
                 <div class="empty_message_container">
-                    <h5 class="empty_message">You have no sold items.</h5>
+                    <h5>You have no sold items.</h5>
                 </div>
             {% endfor %}
         </div>

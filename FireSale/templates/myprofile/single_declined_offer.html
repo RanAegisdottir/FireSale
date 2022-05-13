@@ -1,11 +1,9 @@
-<div class="declined_offer_container">
-    <img class="offer_item_img" src="{{ Offer.item.itemimage_set.first.imgURL }}" alt="{{ Offer.item.name }} image" />
-    <div class="offer_info_container">
-        <h5 class="offer_item_title">{{ Offer.item.name | capfirst}}</h5>
+<div class="single_item_container">
+    <img class="single_item_img" src="{{ Offer.item.itemimage_set.first.imgURL }}" alt="{{ Offer.item.name }} image" />
+    <div class="single_item_info_container">
+        <h5 class="item_title">{{ Offer.item.name | capfirst}}</h5>
         <div class="flex_break"></div>
-        <div class="offer_info_inner_container">
-            <p class="offer_state_title red">Declined<br>$ {{ Offer.amount }}</p>
-        </div>
+            <p class="red">Declined<br>$ {{ Offer.amount }}</p>
     </div>
     <hr class="divider">
 </div>

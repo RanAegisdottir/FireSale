@@ -1,0 +1,23 @@
+<div class="profile_info_flex">
+    <div class="profile_img_container">
+        <img class="profile_img" src="{{ Image.user_image }}" alt="{{ UserInfo.fullname }} profile image">
+    </div>
+    <div class="profile_info_container">
+        <h3 class="user_name">{{ UserInfo.fullname | capfirst }}</h3>
+        {% if UserInfo.rating == 1 %}
+            <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 1.png" alt="1 Star rating image">
+        {% elif UserInfo.rating == 2 %}
+            <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire stars 2.png" alt="2 Star rating image">
+        {% elif UserInfo.rating == 3 %}
+            <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 3.png" alt="3 Star rating image">
+        {% elif UserInfo.rating == 4 %}
+            <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 4.png" alt="4 Star rating image">
+        {% elif UserInfo.rating == 5 %}
+            <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 5.png" alt="5 Star rating image">
+        {% else %}
+            <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png" alt="0 Star rating image">
+        {% endif %}
+        <div class="flex_break"></div>
+        <p class="user_bio">{{ UserInfo.bio }}</p>
+    </div>
+</div>

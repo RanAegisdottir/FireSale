@@ -2,70 +2,19 @@
 {% block sub_content %}
     <div class="profile_container">
         <h1 class="profile_title">Profile</h1>
-        <div class="profile_info_flex">
-            <div class="profile_img_container">
-                <img class="profile_img" src="{{ Image.user_image }}">
-            </div>
-            <div class="profile_info_container">
-                <h3 class="user_name">{{ UserInfo.fullname | capfirst }}</h3>
-                {% if UserInfo.rating == 0 %}
-                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png" >
-                {% endif %}
-                {% if UserInfo.rating == 1 %}
-                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 1.png" >
-                {% endif %}
-                {% if UserInfo.rating == 2 %}
-                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/fire stars 2.png" >
-                {% endif %}
-                {% if UserInfo.rating == 3 %}
-                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 3.png" >
-                {% endif %}
-                {% if UserInfo.rating == 4 %}
-                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 4.png" >
-                {% endif %}
-                {% if UserInfo.rating == 5 %}
-                    <img class="rating_img" src="http://127.0.0.1:8000/static/images/stars fire 5.png" >
-                {% endif %}
-                <div class="flex_break"></div>
-                <p class="user_bio">{{ UserInfo.bio }}</p>
-            </div>
-        </div>
+        {% include 'myprofile/single_profile.html' %}
     </div>
     <hr class="divider">
     <div class="profile_review_container" id="review_section1">
         <h1 class="profile_title">Reviews</h1>
         <div class="review_info_container">
             {% for review in Reviews %}
-                <h3 class="reviewer_name">{{ review.offer.buyer.username | capfirst}}</h3>
-                <div class="flex_break"></div>
-                <h5 class="review_sub_title">Item: </h5>
-                <p>{{ review.offer.item.name }}</p>
-                <div class="flex_break"></div>
-                <h5 class="review_sub_title">Rating:</h5>
-                {% if review.rating.star_num == 0 %}
-                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire%20stars.png">
-                {% endif %}
-                {% if review.rating.star_num == 1 %}
-                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 1.png" >
-                {% endif %}
-                {% if review.rating.star_num == 2 %}
-                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/fire stars 2.png" >
-                {% endif %}
-                {% if review.rating.star_num == 3 %}
-                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 3.png" >
-                {% endif %}
-                {% if review.rating.star_num == 4 %}
-                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 4.png" >
-                {% endif %}
-                {% if review.rating.star_num == 5 %}
-                    <img class="review_rating_img" src="http://127.0.0.1:8000/static/images/stars fire 5.png" >
-                {% endif %}
-                <div class="flex_break"></div>
-                <hr class="review_divider">
+                {% include 'myprofile/single_review.html' with review=review %}
             {% empty %}
                 <div class="empty_message_container">
                     <h5 class="empty_message">You have no reviews.</h5>
                 </div>
             {% endfor %}
         </div>
+    </div>
 {% endblock %}

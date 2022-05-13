@@ -1,16 +1,16 @@
-<div class="purchase_container">
-    <img class="offer_item_img" src="{{ Offer.item.itemimage_set.first.imgURL }}" alt="{{ Offer.item.name }} image" />
-    <div class="offer_info_container">
-        <h5 class="offer_item_title">{{ Offer.item.name | capfirst}}</h5>
+<div class="single_item_container">
+    <img class="single_item_img" src="{{ Offer.item.itemimage_set.first.imgURL }}" alt="{{ Offer.item.name }} image" />
+    <div class="single_item_info_container">
+        <h5 class="item_title">{{ Offer.item.name | capfirst}}</h5>
         <div class="flex_break"></div>
-        <p class="offer_state_title green">Confirmed<br>$ {{ Offer.amount }}</p>
+        <p class="green">Confirmed<br>$ {{ Offer.amount }}</p>
         <div class="flex_break"></div>
 {#        {% if Offer.order_set.first.reviews_set.count == 0 %}#}
           {% if Offer.reviews_set.count == 0 %}
-            <a href="{% url 'review' %}?offer-id={{ Offer.id }}" class="edit_btn purchase_btn"> Give Review </a>
+            <a href="{% url 'review' %}?offer-id={{ Offer.id }}" class="edit_btn"> Give Review </a>
         {% else %}
-            <p class="offer_state_title green">Review sent</p>
+            <p class="green">Review sent</p>
         {% endif %}
     </div>
-    <hr class="offer_divider">
+    <hr class="divider offer_divider">
 </div>

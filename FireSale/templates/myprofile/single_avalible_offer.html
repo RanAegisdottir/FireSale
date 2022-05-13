@@ -1,20 +1,20 @@
-<div class="available_offer_container">
-    <img class="offer_item_img" src="{{ Offer.item.itemimage_set.first.imgURL }}" alt="{{ Offer.item.name }} image" />
-    <div class="offer_info_container">
-        <h5 class="offer_item_title">{{ Offer.item.name | capfirst}}</h5>
+<div class="single_item_container">
+    <img class="single_item_img" src="{{ Offer.item.itemimage_set.first.imgURL }}" alt="{{ Offer.item.name }} image" />
+    <div class="single_item_info_container">
+        <h5 class="item_title">{{ Offer.item.name | capfirst}}</h5>
         <div class="flex_break"></div>
         {% if Offer.accepted %}
-            <p class="offer_state_title green">Accepted<br>$ {{ Offer.amount }}</p>
+            <p class="green">Accepted<br>$ {{ Offer.amount }}</p>
             <div class="flex_break"></div>
             <a href="{% url 'checkout-payment' %}?offer-id={{ Offer.id }}" class="edit_btn"> CHECKOUT </a>
             {% elif not Offer.accepted and Offer.outbid %}
-                <p class="offer_state_title red">Outbid<br>$ {{ Offer.amount }}</p>
+                <p class="red">Outbid<br>$ {{ Offer.amount }}</p>
                 <div class="flex_break"></div>
                 <a href="/shop/{{ Offer.item.id }}" class="edit_btn orange"> BID AGAIN </a>
             {% elif not Offer.accepted and not Offer.outbid %}
-                <p class="offer_state_title yellow">Pending...<br>$ {{ Offer.amount }}</p>
+                <p class="yellow">Pending...<br>$ {{ Offer.amount }}</p>
                 <div class="flex_break"></div>
         {% endif %}
     </div>
-    <hr class="offer_divider">
+    <hr class="divider offer_divider">
 </div>

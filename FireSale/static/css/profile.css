@@ -1,54 +1,5 @@
 
-/* --- Sidebar --- */
-
-/* Sidebar container */
-.sidebar {
-  	background-color:#F97D24;
-    height: 100%;
-    width: 240px;
-    z-index: 600;
-    padding-top: 60px;
-    padding-bottom: 80px;
-}
-
-/* Title of the link selections */
-.side_nav_title{
-  	color: white;
-    border-bottom: 2px solid white;
-    margin: 0px 40px 8px 40px;
-    width: auto;
-}
-
-/* link container */
-.sidebar_options_container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 50px;
-}
-
-
-/* link option */
-.side_nav_option{
-    color: #fbfbfb;
-    padding: 15px 0px 15px 40px;
-    width: 100%;
-}
-
-/* link on hover, so user can see the link they are on */
-.side_nav_option:hover{
-    background-color: #FF903F;
-    color: #fbfbfb;
-    font-size: larger;
-}
-
-.menu_opt_active{
-    background-color: #FF903F;
-    color: #fbfbfb;
-    font-size: larger;
-}
-
-/*! --- Sidebar --- !*/
+/* ----------------- Profile ----------------*/
 
 /* Flex container for my account page */
 .profile_flex_container{
@@ -62,8 +13,8 @@
 }
 
 .profile_container{
-    margin-top: 40px;
-    padding: 70px 120px;
+    margin-top: 25px;
+    padding: 70px 80px;
 }
 
 .profile_title{
@@ -75,6 +26,7 @@
 .profile_info_flex{
     display: flex;
     flex-direction: row;
+    padding: 0 15%;
 }
 
 .profile_img_container{
@@ -110,13 +62,8 @@
 
 .user_bio{
     margin-top: 25px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
-
-/*.rating_img_container{
-    width: 30%;
-    !*text-align: end;*!
-}*/
 
 .rating_img{
     width: 130px;
@@ -125,34 +72,9 @@
     margin-top: 25px;
 }
 
-.flex_break{
-    flex-basis: 100%;
-    height: 0;
-}
 
-.divider{
-    border: 0.5px solid black;
-    width: 100%;
-}
+/* --------------- Profile review ---------------- */
 
-h5.profile_sub_title{
-    color: #f97224;
-    text-align: center;
-    margin-top: -60px;
-    margin-bottom: 40px;
-}
-
-.empty_message_container{
-    text-align: center;
-    width: 100%;
-}
-
-.empty_message{
-    align-self: center;
-}
-
-
-/* ---------- profile review -----------*/
 .profile_review_container{
     padding: 60px 300px;
 }
@@ -167,7 +89,7 @@ h5.profile_sub_title{
 .review_sub_title{
     color: #f97224;
     margin-right: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .review_rating_img{
@@ -175,17 +97,90 @@ h5.profile_sub_title{
     object-fit: scale-down;
 }
 
-.review_divider{
-    border: 0.5px solid black;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
 .review_text{
     padding-top: 15px;
 }
 
-/*-------------------- Edit profile ----------------------*/
+/* ! ------------ Profile ----------- ! */
+
+
+/* ------------------ Single_ files ----------------- */
+
+.single_item_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 48%;
+    max-width: 300px;
+    margin: 0 20px;
+}
+
+.flex_break{
+    flex-basis: 100%;
+    height: 0;
+}
+
+h5.profile_sub_title{
+    color: #f97224;
+    text-align: center;
+    margin-top: -60px;
+    margin-bottom: 40px;
+}
+
+.empty_message_container{
+    text-align: center;
+    width: 100%;
+}
+
+.items_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 25px;
+    width:100%;
+}
+
+.single_item_img{
+    width: 35%;
+    object-fit: cover;
+    margin-right: 2%;
+}
+
+.item_title{
+    color: #f97224;
+    margin-top: 3px;
+}
+
+.single_item_info_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 62%;
+}
+
+/* !------------- Single_ files ------------! */
+
+
+/* ------------------ Dividers ----------------- */
+
+.divider{
+    border: 0.5px solid black;
+    width: 100%;
+}
+
+.divider.review_divider{
+    margin-bottom: 20px;
+}
+
+.divider.offer_divider{
+    margin-bottom: 40px;
+}
+
+
+/* ------------------ Buttons ----------------- */
+
 .edit_btn{
     border: 2px solid #06C421;
     color: #06C421;
@@ -197,66 +192,7 @@ h5.profile_sub_title{
 .edit_btn:hover{
     color: white;
     background-color: #06C421;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-}
-
-.edit_profile_img_btn {
-    margin-top: 20px;
-    align-self: center;
-}
-
-.edit_username_btn{
-    margin-left: 25px;
-    margin-top: 25px;
-}
-
-.edit_bio_btn{
-    margin-top: 16px;
-}
-
-/* ------------------ my offers ----------------- */
-.offer_profile_container, .item_profile_container, .purchase_profile_container, .sold_profile_container{
-    margin-top: 25px;
-    padding: 70px 80px;
-}
-
-.item_container{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: flex-start;
-    /*justify-content: space-between;*/
-    margin-top: 25px;
-    width:100%
-}
-
-.offer_divider{
-    border: 0.5px solid black;
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-.available_offer_container, .seller_item_container, .declined_offer_container, .purchase_container, .sold_item_container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 48%;
-
-    max-width: 300px;
-    margin: 0 20px;
-}
-
-.offer_item_img{
-    width: 35%;
-    /*min-height: 35%;*/
-    /*max-height: 50%;*/
-    object-fit: cover;
-    margin-right: 2%;
-}
-
-.offer_item_title{
-    color: #f97224;
-    margin-top: 3px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
 }
 
 .cancel_offer_btn{
@@ -270,15 +206,7 @@ h5.profile_sub_title{
 .cancel_offer_btn:hover{
     color: white;
     background-color: #f97224;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-}
-
-.offer_info_container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 62%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
 }
 
 .edit_btn.orange{
@@ -291,6 +219,9 @@ h5.profile_sub_title{
     color: white;
 }
 
+
+/* ------------------ To change color of text ----------------- */
+
 .red{
     color: red;
 }
@@ -302,5 +233,4 @@ h5.profile_sub_title{
 .yellow{
     color: #F9C724;
 }
-
 
