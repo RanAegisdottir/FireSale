@@ -100,4 +100,3 @@ def invalid_offer(request, id):
                'Image': UserImage.objects.get(user_id=request.user.id)
                }
     return render(request, 'shop/offer_low.html', context)
-

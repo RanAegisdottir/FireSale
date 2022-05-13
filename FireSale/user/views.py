@@ -1,6 +1,4 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-from django.forms import forms
 from django.shortcuts import render, redirect
 from myprofile.models import UserImage, Users
 

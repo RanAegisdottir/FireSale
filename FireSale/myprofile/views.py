@@ -7,7 +7,7 @@ from shop.models import Offers, ItemImage, Item
 from checkout.models import Order, Reviews
 
 
-# Create your views here.
+# Main profile site where you can see your fullname, bio, image and reviews
 def index(request):
     user_reviews = Reviews.objects.filter(seller_id=request.user.id)
     return render(request, 'myprofile/account.html', {
@@ -18,6 +18,7 @@ def index(request):
     })
 
 
+# Edit profile site
 def edit_profile(request):
     instance = get_object_or_404(Users, user=request.user)
     user = Users.objects.get(user=request.user)
@@ -45,6 +46,7 @@ def edit_profile(request):
     })
 
 
+# my offers site
 def my_offers(request):
     return render(request, 'myprofile/my_offers.html', {
         'Users': request.user,
@@ -57,6 +59,7 @@ def my_offers(request):
     })
 
 
+# purchases site
 def purchases(request):
     return render(request, 'myprofile/purchases.html', {
         'purchased_by': Order.objects.filter(payID__userID=request.user.id),
@@ -68,6 +71,7 @@ def purchases(request):
     })
 
 
+# my items site
 def my_items(request):
     return render(request, 'myprofile/my_items.html', {
         'my_items_products': Item.objects.filter(seller=request.user.id, available=True),
@@ -78,6 +82,7 @@ def my_items(request):
     })
 
 
+# sold items site
 def sold(request):
     return render(request, 'myprofile/sold.html', {
         'sold_products': Item.objects.filter(seller=request.user.id, available=False),
@@ -87,6 +92,7 @@ def sold(request):
     })
 
 
+# When you accept an offer a notification sends to all the users that offered in the item
 def accept(request):
     offer_id = request.GET.get('offer-id', '')
     offer = Offers.objects.get(id=offer_id)
@@ -99,6 +105,7 @@ def accept(request):
     return redirect('my_items')
 
 
+# review site
 def review(request):
     if request.method == 'POST':
         form = ReviewForm(data=request.POST)
@@ -109,6 +116,8 @@ def review(request):
             item_review = Reviews(offer_id=offer.id, rating=rating, seller_id=offer.item.seller.id)
             item_review.save()
             reviews = Reviews.objects.filter(seller_id=offer.item.seller.id)
+
+        # calculating the average rating
             total = 0
             count = 0
             for x in reviews:
